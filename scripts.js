@@ -1,8 +1,15 @@
+// scripts.js
+
+// Smooth Scrolling for Navigation Links
 document.querySelectorAll('nav a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+        // If linking to a section on the same page
+        if (this.getAttribute('href').startsWith('#')) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
     });
 });
