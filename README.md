@@ -1,6 +1,7 @@
 # benfusco.github.io
 Bensite
 
+
 /project-folder
   ├── index.html    # Main HTML file
   ├── styles.css    # CSS file for styling
