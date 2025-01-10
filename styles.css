@@ -1,16 +1,14 @@
-/* Existing Styles */
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     font-size: 18px;
     margin: 0;
     padding: 0;
-    border-left: 60px solid rgb(255, 255, 255); 
-    border-right: 60px solid rgb(255, 255, 255); 
+    border-left: 60px solid white; 
+    border-right: 60px solid white; 
     box-sizing: border-box;
 }
 
-
-/* Assuming the navbar has a height of 50px */
 .section {
     display: flex;
     flex-direction: column; /* Stack the children vertically */
@@ -22,7 +20,6 @@ body {
     min-height: calc(100vh - 50px); /* Subtract the navbar height from the full viewport height */
 }
 
-/* Styles for h1 and p */
 h1, p {
     display: block; /* Ensure they're block-level elements */
     margin: 10px 0; /* Add some spacing between the h1 and p */
@@ -50,6 +47,10 @@ nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
+}
+
+nav ul li {
+    margin-left: auto;
 }
 
 nav a {
