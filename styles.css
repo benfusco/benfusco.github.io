@@ -72,32 +72,38 @@ nav a:active {
 .contact {
     position: fixed;
     bottom: 0; /* Sticks it to the bottom */
-    display: flex;
-    text-align: center;
-    align-items: center;
-    height: 80px;
     width: 100%;
     background-color: white;
-    Color:black;
+    color: black; /* Ensure text is visible */
     padding: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    height: 120px; /* Ensure the contact section has a consistent height */
+}
 
+.contact h2 {
+    margin-bottom: 10px; /* Add space between the heading and the links */
 }
 
 .contact ul {
     list-style: none;
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Align links in a row */
     gap: 20px;
     margin: 0;
     padding: 0;
 }
 
 .contact a {
-    color: black;
-    font-size:18px;
-    text-decoration: none;
+    color: black; /* Default color for links */
+    font-size: 18px;
+    text-decoration: none; /* Remove underline */
 }
 
+/* Link colors per state */
 .contact a:visited {
     color: black; /* Keep it black after being visited */
 }
@@ -107,7 +113,7 @@ nav a:active {
 }
 
 .contact a:active {
-    color: rgb(0, 0, 0); /* Blue when clicked */
+    color: black; /* Black when clicked */
 }
 
 
