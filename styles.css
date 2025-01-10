@@ -112,16 +112,13 @@ nav a:active {
     font-size: 18px;
     text-decoration: none; /* Remove underline */
 }
-
 /* Link colors per state */
 .contact a:visited {
     color: black; /* Keep it black after being visited */
 }
-
 .contact a:hover {
     color: rgb(107, 172, 216); /* Blue on hover */
 }
-
 .contact a:active {
     color: black; /* Black when clicked */
 }
