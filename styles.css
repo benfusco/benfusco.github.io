@@ -1,3 +1,4 @@
+/* Existing Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -40,4 +41,10 @@ nav a:hover {
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+/*  Styles for h1 and p */
+h1, p {
+    display: block; /* Ensure they're block-level elements */
+    margin: 10px 0; /* Add some spacing between the h1 and p */
 }
