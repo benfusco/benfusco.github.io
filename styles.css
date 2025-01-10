@@ -37,14 +37,20 @@ nav a:hover {
 
 .section {
     height: 100vh; /* Full screen height */
-    display: block;
-    justify-content: center;
-    align-items: center;
+    display: flex;
+    flex-direction: column; /* Stack the children vertically */
+    justify-content: center; /* Vertically center the content */
+    align-items: center; /* Horizontally center the content */
     text-align: center;
+    padding: 20px; /* Add some padding if needed */
+    box-sizing: border-box; /* Ensures padding doesn't affect width/height */
 }
 
-/*  Styles for h1 and p */
-p {
+/* New Styles for h1 and p */
+h1, p {
     display: block; /* Ensure they're block-level elements */
     margin: 10px 0; /* Add some spacing between the h1 and p */
+    word-wrap: break-word; /* Allow text to wrap and break onto new lines */
+    width: 100%; /* Ensure the paragraph takes up the full width of its container */
+    max-width: 800px; /* Optional: Restrict the width of the paragraph for readability */
 }
