@@ -136,7 +136,7 @@ footer h3 {
     transition: color 0.3s ease;
 }
 .footer-links a:hover {
-    color: rgb(107, 172, 216); /* Matches your hover color for nav links */
+    color: rgb(107, 172, 216) !important; /* Matches your hover color for nav links */
 }
 .footer-links a:visited {
     color: rgb(0, 0, 0);
