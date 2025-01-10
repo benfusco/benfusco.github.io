@@ -23,3 +23,6 @@ document.querySelectorAll('nav a').forEach(anchor => {
         }
     });
 });
+
+//copyright year auto updates
+document.getElementById("year").textContent = new Date().getFullYear();
