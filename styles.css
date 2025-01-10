@@ -74,14 +74,8 @@ h1, p {
     bottom: 0; /* Sticks it to the bottom */
     left: 0;
     width: 100%;
-    background-color: #f1f1f1; /* Background color of the contact section */
+    background-color: #f1f1f1;
+    Color:black;
     padding: 15px;
     text-align: center;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow to give it some depth */
-    z-index: 1000; /* Ensure it stays on top */
-}
-
-/* Optional: Add some space at the bottom of the content so it doesn't overlap the contact section */
-body {
-    padding-bottom: 60px; /* Adjust based on the height of your contact section */
 }
