@@ -6,6 +6,7 @@ body {
     padding: 0;
 }
 
+
 /* Assuming the navbar has a height of 50px */
 .section {
     display: flex;
@@ -93,15 +94,15 @@ nav a:active {
     text-decoration: none;
 }
 
-nav a:visited {
+.contact a:visited {
     color: black; /* Keep it black after being visited */
 }
 
-nav a:hover {
+.contact a:hover {
     color: rgb(107, 172, 216); /* Blue on hover */
 }
 
-nav a:active {
+.contact a:active {
     color: rgb(0, 0, 0); /* Blue when clicked */
 }
 
