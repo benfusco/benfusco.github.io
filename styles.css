@@ -74,12 +74,11 @@ nav a:active {
     bottom: 0; /* Sticks it to the bottom */
     width: 100%;
     background-color: white;
-    color: black; /* Ensure text is visible */
-    padding: 15px 20px; /* Padding for the contact section */
+    color: black; 
+    padding: 20px; /* Padding for the contact section */
     display: flex; /* Use flexbox for layout */
     justify-content: space-between; /* Space between heading and links */
     align-items: center; /* Align items vertically in the center */
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for visual separation */
 }
 
 .contact h2 {
@@ -91,8 +90,8 @@ nav a:active {
     list-style: none;
     display: flex; /* Arrange the links in a row */
     gap: 20px; /* Spacing between each link */
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
+    margin: 20; /* Remove default margin */
+    padding: 20; /* Remove default padding */
 }
 
 .contact a {
