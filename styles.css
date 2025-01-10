@@ -29,18 +29,19 @@ h1, p {
 }
 
 
-/* Top nav bar/menu */
+/* Header - nav bar */
 nav {
     position: static;
     width: 100%;
     background-color: white;
     color: black; 
     padding: 10px 20px; /* Padding for height */
-    text-align: center;
 }
 
 nav ul {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
     gap: 20px;
     list-style: none;
     margin: 0;
@@ -65,11 +66,16 @@ nav a:active {
 }
 
 /* Specific styles for the "Bensite" header link */
+.nav-header {
+    flex-grow: 1;
+}
+
 .nav-header a {
     font-size: 24px; /* Larger font size to make it stand out */
     font-weight: bold; /* Bold to emphasize it as the header */
     margin-right: auto; /* Push other links to the right */
     color: black;
+    transition: color 0.3s ease;
 }
 .nav-header a:visited {
     color: black; /* Keep it black after being visited */
