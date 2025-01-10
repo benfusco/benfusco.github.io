@@ -72,7 +72,7 @@ nav a:active {
 /* Specific styles for the "Bensite" header link */
 .nav-header {
     flex-grow: 1;
-    max-width: 100px;
+    max-width: 200px;
     overflow: hidden;
 }
 
