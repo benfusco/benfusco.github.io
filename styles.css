@@ -53,18 +53,31 @@ nav a {
     text-decoration: none; /* Remove underline */
     font-size: 18px;
 }
-
 /*Link colors per state*/
 nav a:visited {
     color: black; /* Keep it black after being visited */
 }
-
 nav a:hover {
     color: rgb(107, 172, 216); /* Blue on hover */
 }
-
 nav a:active {
-    color: black; /* Blue when clicked */
+    color: black; 
+}
+
+/* Specific styles for the "Bensite" header link */
+.nav-header a {
+    font-size: 24px; /* Larger font size to make it stand out */
+    font-weight: bold; /* Bold to emphasize it as the header */
+    margin-right: auto; /* Push other links to the right */
+}
+.nav-header a:visited {
+    color: black; /* Keep it black after being visited */
+}
+.nav-header a:hover {
+    color: rgb(107, 172, 216); /* Blue on hover */
+}
+.nav-header a:active {
+    color: black;
 }
 
 
