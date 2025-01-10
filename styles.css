@@ -30,8 +30,7 @@ nav a {
 }
 
 nav a:hover {
-    text-decoration: none; /* Adds things like underline on hover */
-    text-decoration-color: rgb(205, 217, 228);
+    color: rgb(205, 217, 228);
 }
 
 /* Assuming the navbar has a height of 50px */
