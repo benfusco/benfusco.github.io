@@ -35,16 +35,18 @@ nav a:hover {
     text-decoration: underline; /* Add underline on hover */
 }
 
+/* Assuming the navbar has a height of 50px */
 .section {
-    height: 100vh; /* Full screen height */
     display: flex;
     flex-direction: column; /* Stack the children vertically */
     justify-content: center; /* Vertically center the content */
     align-items: center; /* Horizontally center the content */
     text-align: center;
-    padding: 80px; /* Add some padding if needed */
+    padding: 20px; /* Add some padding if needed */
     box-sizing: border-box; /* Ensures padding doesn't affect width/height */
+    min-height: calc(100vh - 50px); /* Subtract the navbar height from the full viewport height */
 }
+
 
 /* New Styles for h1 and p */
 h1, p {
