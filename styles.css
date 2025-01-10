@@ -41,7 +41,3 @@ nav a:hover {
     align-items: center;
     text-align: center;
 }
-
-#home {
-    background: url('images/home-background.png') no-repeat center center/cover;
-}
