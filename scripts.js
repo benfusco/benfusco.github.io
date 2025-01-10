@@ -3,16 +3,18 @@
 // Smooth Scrolling for Navigation Links
 document.querySelectorAll('nav a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetElement = document.querySelector(this.getAttribute('href'));
+        const href = this.getAttribute('href');
+        const targetElement = document.querySelector(href);
+
         if (targetElement) {
+            // If the link points to an element on the same page, enable smooth scrolling
+            e.preventDefault();
             targetElement.scrollIntoView({
                 behavior: 'smooth'
             });
         } else {
-            console.warn(`No element found for selector: ${this.getAttribute('href')}`);
-            //Optional: Add other handling for error, such as alert or showing error message on ui
-            
+            // If no element exists (e.g., href points to another page), allow the link to proceed normally
+            console.log(`Navigating to a different page: ${href}`);
         }
     });
 });
