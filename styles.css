@@ -37,12 +37,12 @@ nav a:visited {
 
 /* Set hover state */
 nav a:hover {
-    color: rgb(0, 132, 255); /* Blue on hover */
+    color: rgb(107, 172, 216); /* Blue on hover */
 }
 
 /* Set active link color (when clicked) */
 nav a:active {
-    color: rgb(0, 132, 255); /* Blue when clicked */
+    color: black; /* Blue when clicked */
 }
 
 /* Assuming the navbar has a height of 50px */
@@ -74,10 +74,19 @@ h1, p {
     bottom: 0; /* Sticks it to the bottom */
     left: 0;
     width: 100%;
-    background-color: #f1f1f1;
+    background-color: white;
     Color:black;
     padding: 15px;
     text-align: center;
+}
+
+.contact ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
 }
 
 .contact a {
@@ -93,10 +102,10 @@ nav a:visited {
 
 /* Set hover state */
 nav a:hover {
-    color: rgb(0, 132, 255); /* Blue on hover */
+    color: rgb(107, 172, 216); /* Blue on hover */
 }
 
 /* Set active link color (when clicked) */
 nav a:active {
-    color: rgb(0, 132, 255); /* Blue when clicked */
+    color: rgb(0, 0, 0); /* Blue when clicked */
 }
