@@ -4,17 +4,22 @@
 document.querySelectorAll('nav a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         const href = this.getAttribute('href');
-        const targetElement = document.querySelector(href);
 
-        if (targetElement) {
-            // If the link points to an element on the same page, enable smooth scrolling
+        if (href.startsWith('#')) {
+            // Handle same-page navigation (smooth scroll)
             e.preventDefault();
-            targetElement.scrollIntoView({
-                behavior: 'smooth'
-            });
+            const targetElement = document.querySelector(href);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            } else {
+                console.warn(`No element found for selector: ${href}`);
+            }
         } else {
-            // If no element exists (e.g., href points to another page), allow the link to proceed normally
-            console.log(`Navigating to a different page: ${href}`);
+            // Let browser handle navigation to other pages
+            console.log(`Navigating to another page: ${href}`);
+            // Do NOT preventDefault for external links
         }
     });
 });
