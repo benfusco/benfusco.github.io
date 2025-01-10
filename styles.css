@@ -48,6 +48,9 @@ nav ul {
     padding: 0;
 }
 
+nav ul li {
+    margin-left: 100px;
+
 nav a {
     color: black; /* Default color */
     text-decoration: none; /* Remove underline */
