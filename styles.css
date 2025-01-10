@@ -29,7 +29,7 @@ nav a {
 }
 
 nav a:hover {
-    color: rgb(205, 217, 228);
+    color: rgb(0, 132, 255);
 }
 
 /* Assuming the navbar has a height of 50px */
