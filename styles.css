@@ -39,6 +39,7 @@ nav {
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 /* Specific styles for the "Bensite" header link */
