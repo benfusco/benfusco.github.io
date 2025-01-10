@@ -1,10 +1,34 @@
 /* Existing Styles */
 body {
     font-family: Arial, sans-serif;
+    font-size: 18px;
     margin: 0;
     padding: 0;
 }
 
+/* Assuming the navbar has a height of 50px */
+.section {
+    display: flex;
+    flex-direction: column; /* Stack the children vertically */
+    justify-content: center; /* Vertically center the content */
+    align-items: center; /* Horizontally center the content */
+    text-align: center;
+    padding: 20px; /* Add some padding if needed */
+    box-sizing: border-box; /* Ensures padding doesn't affect width/height */
+    min-height: calc(100vh - 50px); /* Subtract the navbar height from the full viewport height */
+}
+
+/* New Styles for h1 and p */
+h1, p {
+    display: block; /* Ensure they're block-level elements */
+    margin: 10px 0; /* Add some spacing between the h1 and p */
+    word-wrap: break-word; /* Allow text to wrap and break onto new lines */
+    width: 100%; /* Ensure the paragraph takes up the full width of its container */
+    max-width: 800px; /* Optional: Restrict the width of the paragraph for readability */
+}
+
+
+/* Top nav bar/menu */
 nav {
     position: static;
     width: 100%;
@@ -23,48 +47,23 @@ nav ul {
     padding: 0;
 }
 
-/* Set all link states */
 nav a {
     color: black; /* Default color */
     text-decoration: none; /* Remove underline */
     font-size: 18px;
 }
 
-/* Set visited link color */
+/*Link colors per state*/
 nav a:visited {
     color: black; /* Keep it black after being visited */
 }
 
-/* Set hover state */
 nav a:hover {
     color: rgb(107, 172, 216); /* Blue on hover */
 }
 
-/* Set active link color (when clicked) */
 nav a:active {
     color: black; /* Blue when clicked */
-}
-
-/* Assuming the navbar has a height of 50px */
-.section {
-    display: flex;
-    flex-direction: column; /* Stack the children vertically */
-    justify-content: center; /* Vertically center the content */
-    align-items: center; /* Horizontally center the content */
-    text-align: center;
-    padding: 20px; /* Add some padding if needed */
-    box-sizing: border-box; /* Ensures padding doesn't affect width/height */
-    min-height: calc(100vh - 50px); /* Subtract the navbar height from the full viewport height */
-}
-
-
-/* New Styles for h1 and p */
-h1, p {
-    display: block; /* Ensure they're block-level elements */
-    margin: 10px 0; /* Add some spacing between the h1 and p */
-    word-wrap: break-word; /* Allow text to wrap and break onto new lines */
-    width: 100%; /* Ensure the paragraph takes up the full width of its container */
-    max-width: 800px; /* Optional: Restrict the width of the paragraph for readability */
 }
 
 
@@ -72,7 +71,6 @@ h1, p {
 .contact {
     position: fixed;
     bottom: 0; /* Sticks it to the bottom */
-    left: 0;
     width: 100%;
     background-color: white;
     Color:black;
@@ -95,17 +93,18 @@ h1, p {
     text-decoration: none;
 }
 
-/* Set visited link color */
 nav a:visited {
     color: black; /* Keep it black after being visited */
 }
 
-/* Set hover state */
 nav a:hover {
     color: rgb(107, 172, 216); /* Blue on hover */
 }
 
-/* Set active link color (when clicked) */
 nav a:active {
     color: rgb(0, 0, 0); /* Blue when clicked */
 }
+
+
+
+
