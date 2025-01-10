@@ -4,6 +4,9 @@ body {
     font-size: 18px;
     margin: 0;
     padding: 0;
+    border-left: 10px solid black; 
+    border-right: 10px solid black; 
+    box-sizing: border-box;
 }
 
 
@@ -14,12 +17,12 @@ body {
     justify-content: center; /* Vertically center the content */
     align-items: center; /* Horizontally center the content */
     text-align: center;
-    padding: 20px; /* Add some padding if needed */
+    padding: 20px; 
     box-sizing: border-box; /* Ensures padding doesn't affect width/height */
     min-height: calc(100vh - 50px); /* Subtract the navbar height from the full viewport height */
 }
 
-/* New Styles for h1 and p */
+/* Styles for h1 and p */
 h1, p {
     display: block; /* Ensure they're block-level elements */
     margin: 10px 0; /* Add some spacing between the h1 and p */
@@ -36,6 +39,7 @@ nav {
     background-color: white;
     color: black; 
     padding: 10px 20px; /* Padding for height */
+    box-sizing: border-box;
 }
 
 nav ul {
@@ -99,6 +103,7 @@ footer {
     text-align: center; 
     font-size: 16px; 
     margin-top: auto;
+    box-sizing: border-box;
 }
 
 footer h3 {
