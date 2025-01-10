@@ -44,7 +44,7 @@ nav a:hover {
 }
 
 /*  Styles for h1 and p */
-h1, p {
+p {
     display: block; /* Ensure they're block-level elements */
     margin: 10px 0; /* Add some spacing between the h1 and p */
 }
