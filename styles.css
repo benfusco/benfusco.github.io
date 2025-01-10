@@ -79,3 +79,23 @@ h1, p {
     padding: 15px;
     text-align: center;
 }
+
+.contact a {
+    color: black;
+    font size: 18px;
+}
+
+/* Set visited link color */
+nav a:visited {
+    color: black; /* Keep it black after being visited */
+}
+
+/* Set hover state */
+nav a:hover {
+    color: rgb(0, 132, 255); /* Blue on hover */
+}
+
+/* Set active link color (when clicked) */
+nav a:active {
+    color: rgb(0, 132, 255); /* Blue when clicked */
+}
