@@ -9,7 +9,7 @@ nav {
     position: static
     width: 100%;
     background-color: rgb(255, 255, 255);
-    color: rgb(255, 255, 255); 
+    color: black; 
     padding: 10px 0; /* Padding for height */
     text-align: center;
 }
