@@ -29,6 +29,7 @@ h1, p {
 }
 
 
+
 /* Header - nav bar */
 nav {
     position: static;
@@ -144,3 +145,26 @@ footer h3 {
 }
 
 
+
+/* Flipbook styliing */
+.flipbook-container {
+    position: relative;
+    margin: 0 auto;
+    background-color: #fff;
+    width: 80%; /* Adjust as needed */
+    height: 60vh; /* Height of the flipbook */
+    overflow: hidden;
+}
+
+.flipbook-page {
+    width: 50%; /* Each page occupies half the container's width */
+    height: 100%;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.flipbook-page img {
+    width: 100%; /* Make sure images scale with their container */
+    height: auto;
+    display: block;
+}

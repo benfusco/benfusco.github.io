@@ -28,12 +28,13 @@ document.querySelectorAll('nav a').forEach(anchor => {
 
 
 
-//copyright year auto updates
+//copyright year in footer auto updates
 document.getElementById("year").textContent = new Date().getFullYear();
 
 
 
 // Function to copy email to clipboard
+
 function copyEmail() {
     // Get the email address
     const email = "bfusco00@gmail.com";
@@ -56,3 +57,25 @@ function copyEmail() {
     // Optionally, show a confirmation message (you can customize this)
     alert("Email copied to clipboard!");
 }
+
+
+
+//Flipbook 
+
+//Test flipbook.js external script
+$(document).ready(function() {
+    console.log('flipbook.js loaded and ready!');
+});
+
+// Wait for the DOM to be ready
+$(document).ready(function() {
+    // Initialize the flipbook
+    $('#flipbook').flipBook({
+        width: 80,  // Set the width of the flipbook (percentage of page size)
+        height: 60, // Set the height of the flipbook
+        autoCenter: true, // Automatically center the flipbook
+        pageWidth: 40,  // Each page's width (half the total width for two pages at once)
+        pageHeight: 60, // Page height
+        continuous: false, // Enable continuous flip (looping)
+    });
+});
