@@ -71,11 +71,11 @@ $(document).ready(function() {
 $(document).ready(function() {
     // Initialize the flipbook
     $('#flipbook').flipBook({
-        width: 80,  // Set the width of the flipbook (percentage of page size)
-        height: 60, // Set the height of the flipbook
+        width: 200,  // Set the width of the flipbook (percentage of page size)
+        height: 150, // Set the height of the flipbook
         autoCenter: true, // Automatically center the flipbook
-        pageWidth: 40,  // Each page's width (half the total width for two pages at once)
-        pageHeight: 60, // Page height
+        pageWidth: 100,  // Each page's width (half the total width for two pages at once)
+        pageHeight: 150, // Page height
         continuous: false, // Enable continuous flip (looping)
     });
 });
