@@ -65,7 +65,6 @@ function copyEmail() {
 document.addEventListener("DOMContentLoaded", () => {
     const images = [
         "portfolio_images/Portfolio_Fall 2024_Images_Spreads.jpg",
-        "portfolio_images/Portfolio_Fall 2024_Images_Spreads2.jpg",
         "portfolio_images/Portfolio_Fall 2024_Images_Spreads3.jpg",
         "portfolio_images/Portfolio_Fall 2024_Images_Spreads4.jpg",
         "portfolio_images/Portfolio_Fall 2024_Images_Spreads5.jpg",
