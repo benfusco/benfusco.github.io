@@ -31,6 +31,8 @@ h1, p {
 
 
 /* Header - nav bar */
+
+
 nav {
     position: static;
     width: 100%;
@@ -98,6 +100,8 @@ nav a:active {
 
 
 /* Contact Footer Section Styles */
+
+
 footer {
     width: 100%;
     background-color: white; 
@@ -146,6 +150,8 @@ footer h3 {
 
 
 /*Portfolio Veiwer*/
+
+
 #portfolio_veiwer {
     display: flex;
     flex-direction: column;
@@ -196,11 +202,5 @@ button:disabled {
     cursor: not-allowed;
 }
 
-#current-image {
-    width: 100%; /* Default full width */
-    max-width: 800px; /* Example default size */
-    height: auto;
-    transition: transform 0.3s ease; /* Smooth transition for resizing */
-}
 
 
