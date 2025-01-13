@@ -145,6 +145,7 @@ footer h3 {
 }
 
 
+/*Portfolio Veiwer*/
 .portfolio_veiwer {
     display: flex;
     flex-direction: column;
@@ -159,10 +160,16 @@ footer h3 {
 
 #current-image {
     width: 100%;
-    max-width: 800px;
+    max-width: 1000px;
     height: auto;
     border: 1px solid #ccc;
     margin-bottom: 20px;
+    transition: transform 0.3s ease; /* Smooth transition for resizing */
+}
+
+#current-image.small-image {
+    max-width: 500px; /* Smaller width for first and last images */
+    transition: transform 0.3s ease; /* Smooth transition for resizing */
 }
 
 .navigation-buttons {
@@ -174,8 +181,8 @@ footer h3 {
 button {
     padding: 10px 20px;
     font-size: 16px;
-    background: #007BFF;
-    color: white;
+    background: white;
+    color: black;
     border: none;
     cursor: pointer;
     border-radius: 5px;
@@ -185,4 +192,12 @@ button:disabled {
     background: #ccc;
     cursor: not-allowed;
 }
+
+#current-image {
+    width: 100%; /* Default full width */
+    max-width: 800px; /* Example default size */
+    height: auto;
+    transition: transform 0.3s ease; /* Smooth transition for resizing */
+}
+
 
