@@ -192,7 +192,8 @@ button:hover {
 }
 
 button:disabled {
-    background: #ccc;
+    color:white;
+    background:white;
     cursor: not-allowed;
 }
 
