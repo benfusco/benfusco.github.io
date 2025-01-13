@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "portfolio_images/Portfolio_Fall 2024_Images_Spreads17.jpg",
         "portfolio_images/Portfolio_Fall 2024_Images_Spreads18.jpg",
         "portfolio_images/Portfolio_Fall 2024_Images_Spreads19.jpg",
-        "portfolio_images/Portfolio_Fall 2024_Images_Spreads20.jpg"
+        "portfolio_images/Portfolio_Fall 2024_Images_Spreads20.jpg",
     ];
 
     let currentIndex = 0;
@@ -92,13 +92,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const nextButton = document.getElementById("next-button");
     const pageIndicator = document.getElementById("page-indicator");
 
-    // Function to update the image and page indicator
-    function updateImage() {
-        currentImage.src = images[currentIndex];
-        prevButton.disabled = currentIndex === 0;
-        nextButton.disabled = currentIndex === images.length - 1;
-        pageIndicator.textContent = `Spread ${currentIndex + 1} of ${images.length}`;
+   // Function to update the image, page indicator, and apply small-image class
+   function updateImage() {
+    currentImage.src = images[currentIndex];
+    prevButton.disabled = currentIndex === 0;
+    nextButton.disabled = currentIndex === images.length - 1;
+    pageIndicator.textContent = `Spread ${currentIndex + 1} of ${images.length}`;
+
+    // Add small-image class for the first or last image
+    if (currentIndex === 0 || currentIndex === images.length - 1) {
+        currentImage.classList.add('small-image');
+    } else {
+        currentImage.classList.remove('small-image');
     }
+}
 
     // Event listeners for buttons
     prevButton.addEventListener("click", () => {
