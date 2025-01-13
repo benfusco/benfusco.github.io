@@ -60,22 +60,38 @@ function copyEmail() {
 
 
 
-//Flipbook 
+// Flipbook
 
-//Test flipbook.js external script
-$(document).ready(function() {
+$(document).ready(function () {
     console.log('flipbook.js loaded and ready!');
-});
 
-// Wait for the DOM to be ready
-$(document).ready(function() {
     // Initialize the flipbook
     $('#flipbook').flipBook({
-        width: 200,  // Set the width of the flipbook (percentage of page size)
-        height: 150, // Set the height of the flipbook
-        autoCenter: true, // Automatically center the flipbook
-        pageWidth: 100,  // Each page's width (half the total width for two pages at once)
-        pageHeight: 150, // Page height
-        continuous: false, // Enable continuous flip (looping)
+        width: 800,          // Total width of the flipbook container
+        height: 600,         // Total height of the flipbook container
+        pageWidth: 400,      // Width of a single page (half of the total width)
+        pageHeight: 600,     // Height of a single page
+        autoCenter: true,    // Automatically center the flipbook
+        clickToFlip: true,   // Allow flipping by clicking
+        flipSound: false,    // Disable flip sound (optional)
+        responsive: true,    // Make it responsive
     });
+
+    // Add click events for navigation
+    $('#flipbook').on('click', '.flipbook-page img', function (event) {
+        const $target = $(event.target);
+        const $parent = $target.closest('.flipbook-page');
+
+        if ($parent.index() % 2 === 0) {
+            // If clicked on the left page, go to the previous page
+            $('#flipbook').flipBook('prev');
+        } else {
+            // If clicked on the right page, go to the next page
+            $('#flipbook').flipBook('next');
+        }
+    });
+
+    console.log('Flipbook initialized with interactive page flipping!');
 });
+
+    
