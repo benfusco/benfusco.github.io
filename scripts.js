@@ -60,38 +60,71 @@ function copyEmail() {
 
 
 
-// Flipbook
+// Portfolio Veiwer
 
-$(document).ready(function () {
-    console.log('flipbook.js loaded and ready!');
+document.addEventListener("DOMContentLoaded", () => {
+    const images = [
+        "portfolio_images/Portfolio_Fall 2024_Images_Spreads.jpg",
+        "portfolio_images/Portfolio_Fall 2024_Images_Spreads2.jpg",
+        "portfolio_images/Portfolio_Fall 2024_Images_Spreads3.jpg",
+        "portfolio_images/Portfolio_Fall 2024_Images_Spreads4.jpg",
+        "portfolio_images/Portfolio_Fall 2024_Images_Spreads5.jpg",
+        "portfolio_images/Portfolio_Fall 2024_Images_Spreads6.jpg",
+        "portfolio_images/Portfolio_Fall 2024_Images_Spreads7.jpg",
+        "portfolio_images/Portfolio_Fall 2024_Images_Spreads8.jpg",
+        "portfolio_images/Portfolio_Fall 2024_Images_Spreads9.jpg",
+        "portfolio_images/Portfolio_Fall 2024_Images_Spreads10.jpg",
+        "portfolio_images/Portfolio_Fall 2024_Images_Spreads11.jpg",
+        "portfolio_images/Portfolio_Fall 2024_Images_Spreads12.jpg",
+        "portfolio_images/Portfolio_Fall 2024_Images_Spreads13.jpg",
+        "portfolio_images/Portfolio_Fall 2024_Images_Spreads14.jpg",
+        "portfolio_images/Portfolio_Fall 2024_Images_Spreads15.jpg",
+        "portfolio_images/Portfolio_Fall 2024_Images_Spreads16.jpg",
+        "portfolio_images/Portfolio_Fall 2024_Images_Spreads17.jpg",
+        "portfolio_images/Portfolio_Fall 2024_Images_Spreads18.jpg",
+        "portfolio_images/Portfolio_Fall 2024_Images_Spreads19.jpg",
+        "portfolio_images/Portfolio_Fall 2024_Images_Spreads20.jpg"
+    ];
 
-    // Initialize the flipbook
-    $('#flipbook').flipBook({
-        width: 800,          // Total width of the flipbook container
-        height: 600,         // Total height of the flipbook container
-        pageWidth: 400,      // Width of a single page (half of the total width)
-        pageHeight: 600,     // Height of a single page
-        autoCenter: true,    // Automatically center the flipbook
-        clickToFlip: true,   // Allow flipping by clicking
-        flipSound: false,    // Disable flip sound (optional)
-        responsive: true,    // Make it responsive
-    });
+    let currentIndex = 0;
 
-    // Add click events for navigation
-    $('#flipbook').on('click', '.flipbook-page img', function (event) {
-        const $target = $(event.target);
-        const $parent = $target.closest('.flipbook-page');
+    const currentImage = document.getElementById("current-image");
+    const prevButton = document.getElementById("prev-button");
+    const nextButton = document.getElementById("next-button");
+    const pageIndicator = document.getElementById("page-indicator");
 
-        if ($parent.index() % 2 === 0) {
-            // If clicked on the left page, go to the previous page
-            $('#flipbook').flipBook('prev');
-        } else {
-            // If clicked on the right page, go to the next page
-            $('#flipbook').flipBook('next');
+    // Function to update the image and page indicator
+    function updateImage() {
+        currentImage.src = images[currentIndex];
+        prevButton.disabled = currentIndex === 0;
+        nextButton.disabled = currentIndex === images.length - 1;
+        pageIndicator.textContent = `Spread ${currentIndex + 1} of ${images.length}`;
+    }
+
+    // Event listeners for buttons
+    prevButton.addEventListener("click", () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateImage();
         }
     });
 
-    console.log('Flipbook initialized with interactive page flipping!');
-});
+    nextButton.addEventListener("click", () => {
+        if (currentIndex < images.length - 1) {
+            currentIndex++;
+            updateImage();
+        }
+    });
 
-    
+    // Keydown events for navigation
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "ArrowLeft") {
+            prevButton.click();
+        } else if (event.key === "ArrowRight") {
+            nextButton.click();
+        }
+    });
+
+    // Initialize
+    updateImage();
+});

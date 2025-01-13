@@ -145,26 +145,44 @@ footer h3 {
 }
 
 
-
-/* Flipbook styliing */
-.flipbook-container {
-    position: relative;
+.portfolio_veiwer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     margin: 0 auto;
-    background-color: #fff;
-    width: 80%; /* Adjust as needed */
-    height: 60vh; /* Height of the flipbook */
-    overflow: hidden;
+    max-width: 800px;
+    background: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 20px;
 }
 
-.flipbook-page {
-    width: 50%; /* Each page occupies half the container's width */
-    height: 100%;
-    display: inline-block;
-    overflow: hidden;
-}
-
-.flipbook-page img {
-    width: 100%; /* Make sure images scale with their container */
+#current-image {
+    width: 100%;
+    max-width: 800px;
     height: auto;
-    display: block;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
 }
+
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
