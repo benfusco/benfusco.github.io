@@ -33,7 +33,7 @@ h1 {
     font-weight: 700;
     font-style: normal;
 
-    font size: 20px;
+    font-size: 20px;
 
     display: block; /* Ensure they're block-level elements */
     margin: 10px 0; /* Add some spacing between the h1 and p */
