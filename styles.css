@@ -1,7 +1,14 @@
 /* General Styles */
+
+
 body {
-    font-family: Arial, sans-serif;
+    /* from adobe fonts (reg) */
+    font-family: "mr-eaves-modern", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
     font-size: 18px;
+
     margin: 40px;
     padding: 0;
     border-left: 60px solid white; 
@@ -20,7 +27,28 @@ body {
     min-height: calc(100vh - 50px); /* Subtract the navbar height from the full viewport height */
 }
 
-h1, p {
+h1 {
+    /* from adobe fonts (Bold) */
+    font-family: "mr-eaves-modern", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+
+    font size: 20px;
+
+    display: block; /* Ensure they're block-level elements */
+    margin: 10px 0; /* Add some spacing between the h1 and p */
+    word-wrap: break-word; /* Allow text to wrap and break onto new lines */
+    width: 100%; /* Ensure the paragraph takes up the full width of its container */
+    max-width: 800px; /* Optional: Restrict the width of the paragraph for readability */
+}
+
+p {
+    font-family: "mr-eaves-modern", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+    font-size: 18px;
+
     display: block; /* Ensure they're block-level elements */
     margin: 10px 0; /* Add some spacing between the h1 and p */
     word-wrap: break-word; /* Allow text to wrap and break onto new lines */
@@ -31,7 +59,6 @@ h1, p {
 
 
 /* Header - nav bar */
-
 
 nav {
     position: static;
