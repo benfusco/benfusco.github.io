@@ -134,3 +134,83 @@ document.addEventListener("DOMContentLoaded", () => {
     // Initialize
     updateImage();
 });
+
+
+//Timers
+document.addEventListener("DOMContentLoaded", () => {
+    const timerList = document.getElementById("timer-list");
+    const addTimerButton = document.getElementById("add-timer");
+    const startButton = document.getElementById("start-timers");
+    const resetButton = document.getElementById("reset-timers");
+    const timerDisplay = document.getElementById("timer-display");
+
+    let timers = [];
+    let currentTimerIndex = 0;
+    let countdown;
+
+
+    addTimerButton.addEventListener("click", () => {
+        const timerItem = document.createElement("div");
+        timerItem.classList.add("timer-item");
+        
+        const input = document.createElement("input");
+        input.type = "number";
+        input.min = "1";
+        input.value = "10";
+        
+        const removeButton = document.createElement("button");
+        removeButton.textContent = "Remove";
+        removeButton.addEventListener("click", () => {
+            timerList.removeChild(timerItem);
+        });
+        
+        timerItem.appendChild(input);
+        timerItem.appendChild(removeButton);
+        timerList.appendChild(timerItem);
+    });
+
+    startButton.addEventListener("click", () => {
+        timers = Array.from(timerList.children)
+            .map(timerItem => parseInt(timerItem.querySelector("input").value, 10) || 0)
+            .filter(time => time > 0);
+        
+        if (timers.length > 0) {
+            currentTimerIndex = 0;
+            runTimer();
+        }
+    });
+
+    resetButton.addEventListener("click", () => {
+        clearTimeout(countdown);
+        timerDisplay.textContent = "Timer Reset";
+        document.body.style.backgroundColor = "#ffffff"; // Reset background
+        currentTimerIndex = 0;
+        timerList.innerHTML = "";
+    });
+
+    function runTimer() {
+        if (currentTimerIndex >= timers.length) {
+            timerDisplay.textContent = "All Timers Complete!";
+            return;
+        }
+
+        let timeLeft = timers[currentTimerIndex];
+        updateDisplay(timeLeft);
+
+        countdown = setInterval(() => {
+            timeLeft--;
+            updateDisplay(timeLeft);
+
+            if (timeLeft <= 0) {
+                clearInterval(countdown);
+                currentTimerIndex++;
+                runTimer(); // Move to the next timer
+            }
+        }, 1000);
+    }
+
+    function updateDisplay(time) {
+        timerDisplay.textContent = `Time Left: ${time}s`;
+    }
+});
+

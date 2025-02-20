@@ -64,7 +64,7 @@ nav {
     position: static;
     width: 100%;
     background-color: white;
-    color: black; 
+    color: rgb(107, 172, 216);
     padding: 10px 20px; /* Padding for height */
     box-sizing: border-box;
     display: flex;
@@ -82,17 +82,17 @@ nav {
     font-size: 24px; /* Larger font size to make it stand out */
     font-weight: bold; /* Bold to emphasize it as the header */
     margin-right: auto; /* Push other links to the right */
-    color: black;
+    color: rgb(107, 172, 216);
     transition: color 0.3s ease;
 }
 .nav-header a:visited {
-    color: black; /* Keep it black after being visited */
+    color: rgb(107, 172, 216); /* Keep it black after being visited */
 }
 .nav-header a:hover {
-    color: rgb(107, 172, 216); /* Blue on hover */
+    color: black; /* Blue on hover */
 }
 .nav-header a:active {
-    color: black;
+    color: rgb(107, 172, 216);
 }
 
 nav ul {
@@ -108,20 +108,20 @@ nav ul li {
 }
 
 nav a {
-    color: black; /* Default color */
+    color: rgb(107, 172, 216);; /* Default color */
     text-decoration: none; /* Remove underline */
     font-size: 18px; 
     transition: color 0.3s ease;
 }
 /*Link colors per state*/
 nav a:visited {
-    color: black; /* Keep it black after being visited */
+    color: rgb(107, 172, 216); /* Keep it black after being visited */
 }
 nav a:hover {
-    color: rgb(107, 172, 216); /* Blue on hover */
+    color: black; /* Blue on hover */
 }
 nav a:active {
-    color: black; 
+    color: rgb(107, 172, 216);
 }
 
 
@@ -132,7 +132,7 @@ nav a:active {
 footer {
     width: 100%;
     background-color: white; 
-    color: black;
+    color: rgb(107, 172, 216);
     padding: 20px;
     text-align: center; 
     font-size: 16px; 
@@ -144,7 +144,7 @@ footer h3 {
     margin: 0;
     font-size: 16px;
     font-weight: bold;
-    color: black; 
+    color: rgb(107, 172, 216);
 }
 .footer-container {
     display: flex;
@@ -160,19 +160,19 @@ footer h3 {
     margin: 0;
 }
 .footer-links a {
-    color: black;
+    color:rgb(107, 172, 216);
     text-decoration: none;
     font-size: 16px;
     transition: color 0.3s ease;
 }
 .footer-links a:hover {
-    color: rgb(107, 172, 216);
+    color: black;
 }
 .footer-links a:visited {
-    color: rgb(0, 0, 0);
+    color: rgb(107, 172, 216);
 }
 .footer-links a:active {
-    color: rgb(0, 0, 0);
+    color: rgb(107, 172, 216);
 }
 
 
