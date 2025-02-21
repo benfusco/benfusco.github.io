@@ -28,10 +28,13 @@ document.querySelectorAll('nav a').forEach(anchor => {
 
 
 
+
+
+
+
+// Footer
 //copyright year in footer auto updates
 document.getElementById("year").textContent = new Date().getFullYear();
-
-
 
 // Function to copy email to clipboard
 
@@ -57,6 +60,19 @@ function copyEmail() {
     // Optionally, show a confirmation message (you can customize this)
     alert("Email copied to clipboard!");
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -136,6 +152,18 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 //Timers
 document.addEventListener("DOMContentLoaded", () => {
     const timerList = document.getElementById("timer-list");
@@ -147,12 +175,46 @@ document.addEventListener("DOMContentLoaded", () => {
     const nextTask = document.getElementById("next-task");
 
     // Audio elements
-    const startSound = document.getElementById("Timer-Start");
-    const finishSound = document.getElementById("Timer-End");
+    const startSound = document.getElementById("start-sound");
+    const finishSound = document.getElementById("finish-sound");
+
+    // Preset buttons
+    const presetStretch = document.getElementById("preset-stretch");
+    const presetHangboard = document.getElementById("preset-hangboard");
+    const presetMeditate = document.getElementById("preset-meditate");
 
     let timers = []; // Array to store { name, time } objects
     let currentTimerIndex = 0;
     let countdown;
+
+    // Define preset timers
+    const presets = {
+        stretch: [
+            { name: "Stretch 1", time: 30 },
+            { name: "Stretch 2", time: 30 },
+            { name: "Stretch 3", time: 30 },
+        ],
+        hangboard: [
+            { name: "Prep", time: 10 },
+            { name: "Jug Hang", time: 20 },
+            { name: "Rest", time: 30 },
+            { name: "4 Finger Hang", time: 10 },
+            { name: "Rest", time: 30 },
+            { name: "Pull Up", time: 10 },
+            { name: "Rest", time: 30 },
+            { name: "4 Finger Hang", time: 10 },
+            { name: "Rest", time: 30 },
+            { name: "Pull Up", time: 10 },
+            { name: "Rest", time: 30 },
+            { name: "3 Finger Hang", time: 10 },
+            { name: "Rest", time: 30 },
+            { name: "Pull Up", time: 10 },
+            { name: "Jug Hang", time: 20 },
+        ],
+        meditate: [
+            { name: "Breath", time: 20 },
+        ],
+    };
 
     // Function to initialize default timers
     function initializeTimers() {
@@ -163,7 +225,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // Task Name Input
             const nameInput = document.createElement("input");
             nameInput.type = "text";
-            nameInput.placeholder = "Task Name";
+            nameInput.placeholder = "Activity";
             nameInput.value = `# ${i}`; // Default name
 
             // Time Input
@@ -207,7 +269,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const timeInput = document.createElement("input");
         timeInput.type = "number";
         timeInput.min = "1";
-        timeInput.value = "10";
+        timeInput.placeholder = "Seconds";
 
         // Remove Button
         const removeButton = document.createElement("button");
@@ -251,7 +313,65 @@ document.addEventListener("DOMContentLoaded", () => {
         timerList.innerHTML = ""; // Clear the timer list
         timers = []; // Reset the timers array
         currentTimerIndex = 0; // Reset the current timer index
+        initializeTimers(); // Reinitialize default timers
     });
+
+    // Preset Button Handlers
+    presetStretch.addEventListener("click", () => {
+        loadPreset(presets.stretch);
+    });
+
+    presetHangboard.addEventListener("click", () => {
+        loadPreset(presets.hangboard);
+    });
+
+    presetMeditate.addEventListener("click", () => {
+        loadPreset(presets.meditate);
+    });
+
+    // Function to load a preset
+    function loadPreset(preset) {
+        // Clear existing timers
+        timerList.innerHTML = "";
+        timers = [];
+
+        // Add preset timers to the list
+        preset.forEach((task, index) => {
+            const timerItem = document.createElement("div");
+            timerItem.classList.add("timer-item");
+
+            // Task Name Input
+            const nameInput = document.createElement("input");
+            nameInput.type = "text";
+            nameInput.placeholder = "Activity";
+            nameInput.value = task.name;
+
+            // Time Input
+            const timeInput = document.createElement("input");
+            timeInput.type = "number";
+            timeInput.min = "1";
+            timeInput.placeholder = "Seconds";
+            timeInput.value = task.time;
+
+            // Remove Button
+            const removeButton = document.createElement("button");
+            removeButton.textContent = "Remove";
+            removeButton.addEventListener("click", () => {
+                timerList.removeChild(timerItem);
+            });
+
+            // Append Inputs and Button to Timer Item
+            timerItem.appendChild(nameInput);
+            timerItem.appendChild(timeInput);
+            timerItem.appendChild(removeButton);
+
+            // Append Timer Item to Timer List
+            timerList.appendChild(timerItem);
+        });
+
+        // Update the timers array
+        timers = [...preset]; // Use a copy of the preset array
+    }
 
     // Run Timer Function
     function runTimer() {
@@ -302,4 +422,3 @@ document.addEventListener("DOMContentLoaded", () => {
         timerDisplay.textContent = `Time Left: ${time}s`;
     }
 });
-

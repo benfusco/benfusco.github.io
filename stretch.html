@@ -14,10 +14,9 @@
 
 
 <body>
-
 <!-- Audio elements for sounds -->
-<audio id="Timer-Start" src="Sounds/Timer Start.m4a"></audio>
-<audio id="Timer-End" src="Sounds/Timer End.m4a"></audio>
+<audio id="start-sound" src="Sounds/Timer Start.m4a"></audio>
+<audio id="finish-sound" src="Sounds/Timer End.m4a"></audio>
 
     <!-- Navigation Menu -->
     <nav>
@@ -25,7 +24,7 @@
         <ul>
             <li><a href="#about">About</a></li>
             <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="stretch.html"a>Stretch</a></li>
+            <li><a href="stretch.html">Stretch</a></li>
             <li><a href="#footer">Contact</a></li>
         </ul>
     </nav>
@@ -34,7 +33,7 @@
         <main id="stretch">
             <section id="stretch" class="section">
                 <h1>Stretch Timer</h1>
-                <p>Stretch is a project developed in response to a lack of free applications for stretching, hangboarding and meditation</p>
+                <p>Stretch is a project developed in response to a lack of free applications for stretching, hangboarding and meditation.</p>
 
         <!-- Timer Controls -->
         <div class="timer-container">
@@ -50,9 +49,15 @@
             <button id="add-timer">Add Timer</button>
             <button id="reset-timers">Reset</button>
         
+            <!-- Preset Timer Buttons -->
+            <div class="preset-buttons">
+            <button id="preset-stretch">Stretch</button>
+            <button id="preset-hangboard">Hangboard</button>
+            <button id="preset-meditate">Meditate</button>
+            </div>
         </div>
                 
-    <!-- Contact Section -->
+<!-- Contact Section -->
 <footer id="footer">
     <div class="footer-container">
         <h3>Contact</h3>
