@@ -11,35 +11,48 @@
 
     <title>Bensite</title>
 </head>
+
+
 <body>
+
+<!-- Audio elements for sounds -->
+<audio id="Timer-Start" src="Sounds/Timer Start.m4a"></audio>
+<audio id="Timer-End" src="Sounds/Timer End.m4a"></audio>
+
     <!-- Navigation Menu -->
     <nav>
         <div class="nav-header"><a href="index.html">Bensite</a></div>
         <ul>
-            <li><a href="index.html#about">About</a></li>
+            <li><a href="#about">About</a></li>
             <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="stretch.html"a>Stretch</a></li>
             <li><a href="#footer">Contact</a></li>
-            <li><a href="#stretch">Stretch</a></li>
-       </ul>
+        </ul>
     </nav>
 
         <!-- Stretch Content -->
-
         <main id="stretch">
             <section id="stretch" class="section">
                 <h1>Stretch Timer</h1>
                 <p>Stretch is a project developed in response to a lack of free applications for stretching and hangboarding.</p>
-                
-                <!-- Stretch components -->
-                <div class="timer-container">
-                    <h2 id="timer-display">Time Left: --s</h2>
-                    <button id="start-timers">Start Timers</button>
-                    <div id="timer-list"></div>
-                    <button id="add-timer">Add Timer</button>
-                    <button id="reset-timers">Reset</button>
-                </div>
 
-        <!-- Contact Section -->
+        <!-- Timer Controls -->
+        <div class="timer-container">
+            <h2 id="timer-display">Time Left: --s</h2>
+            <h3 id="current-task">Current: --</h3>
+            <h3 id="next-task">Next: --</h3>
+
+            <button id="start-timers">Start Timers</button>
+            
+            <!-- Timer List -->
+            <div id="timer-list"></div>
+
+            <button id="add-timer">Add Timer</button>
+            <button id="reset-timers">Reset</button>
+        
+        </div>
+                
+    <!-- Contact Section -->
 <footer id="footer">
     <div class="footer-container">
         <h3>Contact</h3>

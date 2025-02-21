@@ -143,72 +143,161 @@ document.addEventListener("DOMContentLoaded", () => {
     const startButton = document.getElementById("start-timers");
     const resetButton = document.getElementById("reset-timers");
     const timerDisplay = document.getElementById("timer-display");
+    const currentTask = document.getElementById("current-task");
+    const nextTask = document.getElementById("next-task");
 
-    let timers = [];
+    // Audio elements
+    const startSound = document.getElementById("Timer-Start");
+    const finishSound = document.getElementById("Timer-End");
+
+    let timers = []; // Array to store { name, time } objects
     let currentTimerIndex = 0;
     let countdown;
 
+    // Function to initialize default timers
+    function initializeTimers() {
+        for (let i = 1; i <= 3; i++) {
+            const timerItem = document.createElement("div");
+            timerItem.classList.add("timer-item");
 
+            // Task Name Input
+            const nameInput = document.createElement("input");
+            nameInput.type = "text";
+            nameInput.placeholder = "Task Name";
+            nameInput.value = `# ${i}`; // Default name
+
+            // Time Input
+            const timeInput = document.createElement("input");
+            timeInput.type = "number";
+            timeInput.min = "1";
+            timeInput.placeholder = "Seconds";
+            timeInput.value = "10"; // Default time
+
+            // Remove Button
+            const removeButton = document.createElement("button");
+            removeButton.textContent = "Remove";
+            removeButton.addEventListener("click", () => {
+                timerList.removeChild(timerItem);
+            });
+
+            // Append Inputs and Button to Timer Item
+            timerItem.appendChild(nameInput);
+            timerItem.appendChild(timeInput);
+            timerItem.appendChild(removeButton);
+
+            // Append Timer Item to Timer List
+            timerList.appendChild(timerItem);
+        }
+    }
+
+    // Call initializeTimers when the page loads
+    initializeTimers();
+
+    // Add Timer Button
     addTimerButton.addEventListener("click", () => {
         const timerItem = document.createElement("div");
         timerItem.classList.add("timer-item");
-        
-        const input = document.createElement("input");
-        input.type = "number";
-        input.min = "1";
-        input.value = "10";
-        
+
+        // Task Name Input
+        const nameInput = document.createElement("input");
+        nameInput.type = "text";
+        nameInput.placeholder = "Task Name";
+
+        // Time Input
+        const timeInput = document.createElement("input");
+        timeInput.type = "number";
+        timeInput.min = "1";
+        timeInput.value = "10";
+
+        // Remove Button
         const removeButton = document.createElement("button");
         removeButton.textContent = "Remove";
         removeButton.addEventListener("click", () => {
             timerList.removeChild(timerItem);
         });
-        
-        timerItem.appendChild(input);
+
+        // Append Inputs and Button to Timer Item
+        timerItem.appendChild(nameInput);
+        timerItem.appendChild(timeInput);
         timerItem.appendChild(removeButton);
+
+        // Append Timer Item to Timer List
         timerList.appendChild(timerItem);
     });
 
+    // Start Button
     startButton.addEventListener("click", () => {
-        timers = Array.from(timerList.children)
-            .map(timerItem => parseInt(timerItem.querySelector("input").value, 10) || 0)
-            .filter(time => time > 0);
-        
+        // Populate the timers array with { name, time } objects
+        timers = Array.from(timerList.children).map(timerItem => {
+            const name = timerItem.querySelector("input[type='text']").value || "Unnamed Task";
+            const time = parseInt(timerItem.querySelector("input[type='number']").value, 10) || 0;
+            return { name, time };
+        }).filter(timer => timer.time > 0); // Filter out invalid timers
+
         if (timers.length > 0) {
             currentTimerIndex = 0;
             runTimer();
+        } else {
+            alert("Please add valid timers!");
         }
     });
 
+    // Reset Button
     resetButton.addEventListener("click", () => {
-        clearTimeout(countdown);
-        timerDisplay.textContent = "Timer Reset";
-        document.body.style.backgroundColor = "#ffffff"; // Reset background
-        currentTimerIndex = 0;
-        timerList.innerHTML = "";
+        clearInterval(countdown); // Stop the countdown
+        timerDisplay.textContent = "Time Left: --s";
+        currentTask.textContent = "Current: --";
+        nextTask.textContent = "Next: --";
+        timerList.innerHTML = ""; // Clear the timer list
+        timers = []; // Reset the timers array
+        currentTimerIndex = 0; // Reset the current timer index
     });
 
+    // Run Timer Function
     function runTimer() {
         if (currentTimerIndex >= timers.length) {
+            // All timers are complete
             timerDisplay.textContent = "All Timers Complete!";
+            currentTask.textContent = "Current: --";
+            nextTask.textContent = "Next: --";
+            finishSound.play(); // Play the long ding sound
             return;
         }
 
-        let timeLeft = timers[currentTimerIndex];
+        const currentTimer = timers[currentTimerIndex];
+        let timeLeft = currentTimer.time;
+
+        // Update Display
+        currentTask.textContent = `Current: ${currentTimer.name}`;
+        nextTask.textContent = currentTimerIndex + 1 < timers.length ? `Next: ${timers[currentTimerIndex + 1].name}` : "Finished";
         updateDisplay(timeLeft);
 
+        // Play the short ding sound when a new timer starts
+        startSound.play();
+
+        // Start Countdown
         countdown = setInterval(() => {
             timeLeft--;
             updateDisplay(timeLeft);
 
             if (timeLeft <= 0) {
-                clearInterval(countdown);
-                currentTimerIndex++;
-                runTimer(); // Move to the next timer
+                clearInterval(countdown); // Stop the current countdown
+                currentTimerIndex++; // Move to the next timer
+                if (currentTimerIndex < timers.length) {
+                    // Run the next timer after a short delay (e.g., 1 second)
+                    setTimeout(runTimer, 1000);
+                } else {
+                    // All timers are complete
+                    timerDisplay.textContent = "All Timers Complete!";
+                    currentTask.textContent = "Current: --";
+                    nextTask.textContent = "Next: --";
+                    finishSound.play(); // Play the long ding sound
+                }
             }
         }, 1000);
     }
 
+    // Update Display Function
     function updateDisplay(time) {
         timerDisplay.textContent = `Time Left: ${time}s`;
     }

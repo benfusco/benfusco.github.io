@@ -124,6 +124,17 @@ nav a:active {
     color: rgb(107, 172, 216);
 }
 
+/* About Page Text Formatting */
+.about {
+    text-align: left;
+    hyphens: none;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    max-width: 800px;
+    margin: 0 auto; /* Centers the text container */
+}
+
 
 
 /* Contact Footer Section Styles */
