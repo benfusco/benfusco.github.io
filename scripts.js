@@ -173,6 +173,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const timerDisplay = document.getElementById("timer-display");
     const currentTask = document.getElementById("current-task");
     const nextTask = document.getElementById("next-task");
+    const totalTimeDisplay = document.getElementById("total-time");
+
 
     // Audio elements
     const startSound = document.getElementById("start-sound");
@@ -212,9 +214,15 @@ document.addEventListener("DOMContentLoaded", () => {
             { name: "Jug Hang", time: 20 },
         ],
         meditate: [
-            { name: "Breath", time: 20 },
+            { name: "Breath", time: 600 },
         ],
     };
+
+    // Function to calculate and display total time
+    function updateTotalTime() {
+        const totalTime = timers.reduce((sum, timer) => sum + timer.time, 0);
+        totalTimeDisplay.textContent = `Total Time: ${totalTime}s`;
+    }    
 
     // Function to initialize default timers
     function initializeTimers() {
@@ -240,6 +248,8 @@ document.addEventListener("DOMContentLoaded", () => {
             removeButton.textContent = "Remove";
             removeButton.addEventListener("click", () => {
                 timerList.removeChild(timerItem);
+                updateTimersArray(); // Update timers array when a timer is removed
+                updateTotalTime(); // Update total time display
             });
 
             // Append Inputs and Button to Timer Item
@@ -276,6 +286,8 @@ document.addEventListener("DOMContentLoaded", () => {
         removeButton.textContent = "Remove";
         removeButton.addEventListener("click", () => {
             timerList.removeChild(timerItem);
+            updateTimersArray(); // Update timers array when a timer is removed
+            updateTotalTime(); // Update total time display
         });
 
         // Append Inputs and Button to Timer Item
@@ -285,6 +297,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Append Timer Item to Timer List
         timerList.appendChild(timerItem);
+
+        updateTimersArray(); // Update timers array when a new timer is added
+        updateTotalTime(); // Update total time display
     });
 
     // Start Button
@@ -314,6 +329,7 @@ document.addEventListener("DOMContentLoaded", () => {
         timers = []; // Reset the timers array
         currentTimerIndex = 0; // Reset the current timer index
         initializeTimers(); // Reinitialize default timers
+        updateTotalTime(); // Update total time display
     });
 
     // Preset Button Handlers
@@ -358,6 +374,8 @@ document.addEventListener("DOMContentLoaded", () => {
             removeButton.textContent = "Remove";
             removeButton.addEventListener("click", () => {
                 timerList.removeChild(timerItem);
+                updateTimersArray(); // Update timers array when a timer is removed
+                updateTotalTime(); // Update total time display
             });
 
             // Append Inputs and Button to Timer Item
@@ -371,6 +389,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Update the timers array
         timers = [...preset]; // Use a copy of the preset array
+        updateTotalTime(); // Update total time display
     }
 
     // Run Timer Function

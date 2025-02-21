@@ -1,126 +1,223 @@
-/* General Styles */
+/* Universal Styles */
+/* Universal Styles */
+/* Universal Styles */
+
+    body {
+        /* from adobe fonts (reg) */
+        font-family: "mr-eaves-modern", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+
+        font-size: 18px;
+
+        margin: 40px;
+        padding: 0;
+        border-left: 60px solid white; 
+        border-right: 60px solid white; 
+        box-sizing: border-box;
+    }
+
+    .section {
+        display: flex;
+        flex-direction: column; /* Stack the children vertically */
+        justify-content: center; /* Vertically center the content */
+        align-items: center; /* Horizontally center the content */
+        text-align: center;
+        padding: 20px; 
+        box-sizing: border-box; /* Ensures padding doesn't affect width/height */
+        min-height: calc(100vh - 50px); /* Subtract the navbar height from the full viewport height */
+    }
+
+    h1 {
+        /* from adobe fonts (Bold) */
+        font-family: "mr-eaves-modern", sans-serif;
+        font-weight: 700;
+        font-style: normal;
+
+        font-size: 20px;
+
+        display: block; /* Ensure they're block-level elements */
+        margin: 0px 0; /* Add some spacing between the h1 and p */
+        word-wrap: break-word; /* Allow text to wrap and break onto new lines */
+        width: 100%; /* Ensure the paragraph takes up the full width of its container */
+        max-width: 800px; /* Optional: Restrict the width of the paragraph for readability */
+    }
+
+    p {
+        font-family: "mr-eaves-modern", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+
+        font-size: 18px;
+
+        display: block; /* Ensure they're block-level elements */
+        margin: 10px 0; /* Add some spacing between the h1 and p */
+        word-wrap: break-word; /* Allow text to wrap and break onto new lines */
+        width: 100%; /* Ensure the paragraph takes up the full width of its container */
+        max-width: 800px; /* Optional: Restrict the width of the paragraph for readability */
+    }
+
+    /*buttons*/
+    button {
+        font-family: "mr-eaves-modern", sans-serif; /* Match page font */
+        font-weight: 400;
+        font-style: normal;
+        font-size: 18px; /* Keep text size consistent */
+        background: white;
+        color: black;
+        border: none;
+        cursor: pointer;
+        transition: color 0.3s ease;
+        text-align: center;
+    }
+
+    button:hover {
+        color: rgb(107, 172, 216);
+        background: white;
+    }
+
+    button:disabled {
+        color:white;
+        background:white;
+        cursor: not-allowed;
+    }
 
 
-body {
-    /* from adobe fonts (reg) */
-    font-family: "mr-eaves-modern", sans-serif;
-    font-weight: 400;
-    font-style: normal;
 
-    font-size: 18px;
+/* Header - Footer*/
+/* Header - Footer*/
+/* Header - Footer*/
 
-    margin: 40px;
-    padding: 0;
-    border-left: 60px solid white; 
-    border-right: 60px solid white; 
-    box-sizing: border-box;
-}
+    /* Header - nav bar */
+    nav {
+        position: static;
+        width: 100%;
+        background-color: white;
+        color: rgb(107, 172, 216);
+        padding: 10px 20px; /* Padding for height */
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
-.section {
-    display: flex;
-    flex-direction: column; /* Stack the children vertically */
-    justify-content: center; /* Vertically center the content */
-    align-items: center; /* Horizontally center the content */
-    text-align: center;
-    padding: 20px; 
-    box-sizing: border-box; /* Ensures padding doesn't affect width/height */
-    min-height: calc(100vh - 50px); /* Subtract the navbar height from the full viewport height */
-}
+    /* Specific styles for the "Bensite" header link */
+    .nav-header {
+        flex-grow: 1;
+        max-width: 200px;
+        overflow: hidden;
+    }
+    .nav-header a {
+        font-size: 24px; /* Larger font size to make it stand out */
+        font-weight: bold; /* Bold to emphasize it as the header */
+        margin-right: auto; /* Push other links to the right */
+        color: rgb(107, 172, 216);
+        transition: color 0.3s ease;
+    }
+    .nav-header a:visited {
+        color: rgb(107, 172, 216); /* Keep it black after being visited */
+    }
+    .nav-header a:hover {
+        color: black; /* Blue on hover */
+    }
+    .nav-header a:active {
+        color: rgb(107, 172, 216);
+    }
 
-h1 {
-    /* from adobe fonts (Bold) */
-    font-family: "mr-eaves-modern", sans-serif;
-    font-weight: 700;
-    font-style: normal;
+    nav ul {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    nav ul li {
+        margin-left: 20px;
+    }
+    nav a {
+        color: rgb(107, 172, 216);; /* Default color */
+        text-decoration: none; /* Remove underline */
+        font-size: 18px; 
+        transition: color 0.3s ease;
+    }
+    /*Link colors per state*/
+    nav a:visited {
+        color: rgb(107, 172, 216); /* Keep it black after being visited */
+    }
+    nav a:hover {
+        color: black; /* Blue on hover */
+    }
+    nav a:active {
+        color: rgb(107, 172, 216);
+    }
 
-    font-size: 20px;
-
-    display: block; /* Ensure they're block-level elements */
-    margin: 10px 0; /* Add some spacing between the h1 and p */
-    word-wrap: break-word; /* Allow text to wrap and break onto new lines */
-    width: 100%; /* Ensure the paragraph takes up the full width of its container */
-    max-width: 800px; /* Optional: Restrict the width of the paragraph for readability */
-}
-
-p {
-    font-family: "mr-eaves-modern", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-
-    font-size: 18px;
-
-    display: block; /* Ensure they're block-level elements */
-    margin: 10px 0; /* Add some spacing between the h1 and p */
-    word-wrap: break-word; /* Allow text to wrap and break onto new lines */
-    width: 100%; /* Ensure the paragraph takes up the full width of its container */
-    max-width: 800px; /* Optional: Restrict the width of the paragraph for readability */
-}
+    /* About Page Text Formatting */
+    .about {
+        text-align: left;
+        hyphens: none;
+        -webkit-hyphens: none;
+        -moz-hyphens: none;
+        -ms-hyphens: none;
+        max-width: 800px;
+        margin: 0 auto; /* Centers the text container */
+    }
 
 
+    /* Contact Footer Section Styles */
+    footer {
+        width: 100%;
+        background-color: white; 
+        color: rgb(107, 172, 216);
+        padding: 60px;
+        text-align: center; 
+        font-size: 16px; 
+        margin-top: auto;
+        box-sizing: border-box;
+    }
 
-/* Header - nav bar */
-nav {
-    position: static;
-    width: 100%;
-    background-color: white;
-    color: rgb(107, 172, 216);
-    padding: 10px 20px; /* Padding for height */
-    box-sizing: border-box;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+    footer h3 {
+        margin: 0;
+        font-size: 16px;
+        font-weight: bold;
+        color: rgb(107, 172, 216);
+    }
 
-/* Specific styles for the "Bensite" header link */
-.nav-header {
-    flex-grow: 1;
-    max-width: 200px;
-    overflow: hidden;
-}
-.nav-header a {
-    font-size: 24px; /* Larger font size to make it stand out */
-    font-weight: bold; /* Bold to emphasize it as the header */
-    margin-right: auto; /* Push other links to the right */
-    color: rgb(107, 172, 216);
-    transition: color 0.3s ease;
-}
-.nav-header a:visited {
-    color: rgb(107, 172, 216); /* Keep it black after being visited */
-}
-.nav-header a:hover {
-    color: black; /* Blue on hover */
-}
-.nav-header a:active {
-    color: rgb(107, 172, 216);
-}
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        gap: 10px;
+    }
+    .footer-links {
+        list-style: none;
+        display: flex;
+        gap: 20px; 
+        padding: 0;
+        margin: 0;
+    }
+    .footer-links a {
+        color:rgb(107, 172, 216);
+        text-decoration: none;
+        font-size: 16px;
+        transition: color 0.3s ease;
+    }
+    .footer-links a:hover {
+        color: black;
+    }
+    .footer-links a:visited {
+        color: rgb(107, 172, 216);
+    }
+    .footer-links a:active {
+        color: rgb(107, 172, 216);
+    }
 
-nav ul {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-nav ul li {
-    margin-left: 20px;
-}
-nav a {
-    color: rgb(107, 172, 216);; /* Default color */
-    text-decoration: none; /* Remove underline */
-    font-size: 18px; 
-    transition: color 0.3s ease;
-}
-/*Link colors per state*/
-nav a:visited {
-    color: rgb(107, 172, 216); /* Keep it black after being visited */
-}
-nav a:hover {
-    color: black; /* Blue on hover */
-}
-nav a:active {
-    color: rgb(107, 172, 216);
-}
+
+
+
+/* ABOUT */
+/* ABOUT */
+/* ABOUT */
 
 /* About Page Text Formatting */
 .about {
@@ -133,128 +230,90 @@ nav a:active {
     margin: 0 auto; /* Centers the text container */
 }
 
-/* Preset Buttons */
-.preset-buttons {
-    display: flex;
-    gap: 10px;
-    margin-top: 20px;
-}
-
-.preset-buttons button {
-    font-size: 16px;
-    background-color: white;
-    color: black;
-    border: none;
-    cursor: pointer;
-}
-
-
-/* Contact Footer Section Styles */
-footer {
-    width: 100%;
-    background-color: white; 
-    color: rgb(107, 172, 216);
-    padding: 20px;
-    text-align: center; 
-    font-size: 16px; 
-    margin-top: auto;
-    box-sizing: border-box;
-}
-
-footer h3 {
-    margin: 0;
-    font-size: 16px;
-    font-weight: bold;
-    color: rgb(107, 172, 216);
-}
-
-.footer-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    gap: 10px;
-}
-.footer-links {
-    list-style: none;
-    display: flex;
-    gap: 20px; 
-    padding: 0;
-    margin: 0;
-}
-.footer-links a {
-    color:rgb(107, 172, 216);
-    text-decoration: none;
-    font-size: 16px;
-    transition: color 0.3s ease;
-}
-.footer-links a:hover {
-    color: black;
-}
-.footer-links a:visited {
-    color: rgb(107, 172, 216);
-}
-.footer-links a:active {
-    color: rgb(107, 172, 216);
-}
-
 
 /*Portfolio Veiwer*/
+/*Portfolio Veiwer*/
+/*Portfolio Veiwer*/
 
-#portfolio_veiwer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    background: white;
-    padding: 20px;
-}
+    #portfolio_veiwer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        background: white;
+        padding: 20px;
+    }
 
-#current-image {
-    width: 100%;
-    max-width: 1500px;
-    height: auto;
-    margin-bottom: 20px;
-    transition: transform 0.3s ease; /* Smooth transition for resizing */
-}
+    #current-image {
+        width: 100%;
+        max-width: 1500px;
+        height: auto;
+        margin-bottom: 20px;
+        transition: transform 0.3s ease; /* Smooth transition for resizing */
+    }
 
-#current-image.small-image {
-    max-width: 600px; /* Smaller width for first and last images */
-    max-height: 600px;
-    transition: transform 0.3s ease; /* Smooth transition for resizing */
-}
+    #current-image.small-image {
+        max-width: 600px; /* Smaller width for first and last images */
+        max-height: 600px;
+        transition: transform 0.3s ease; /* Smooth transition for resizing */
+    }
 
-#page-indicator {
-    font-size: 14px;
-    color: black;
-}
+    #page-indicator {
+        font-size: 14px;
+        color: black;
+    }
 
-.navigation-buttons {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-}
-
-button {
-    padding: 10px 20px;
-    font-size: 18px;
-    background: white;
-    color: black;
-    border: none;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-button:hover {
-    color: rgb(107, 172, 216);
-    background: white;
-}
-
-button:disabled {
-    color:white;
-    background:white;
-    cursor: not-allowed;
-}
+    .navigation-buttons {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
 
 
+/* Stretch */
+/* Stretch */
+/* Stretch */
 
+    #stretch {
+        text-align: center; /* Center text */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .timer-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center all buttons */
+        justify-content: center;
+        gap: 10px;
+    }
+
+    /* Preset Buttons */
+    .preset-buttons {
+        display: flex;
+        gap: 10px;
+        margin-top: 0px;
+    }
+
+    .preset-buttons button {
+        font-size: 16px;
+        background-color: white;
+        color: black;
+        border: none;
+        cursor: pointer;
+    }
+
+    .preset-buttons button:hover {
+        color: rgb(107, 172, 216);
+    }
+
+    .start-timers {
+        font-size: 20px;
+        background-color: white;
+        color: black;
+        border: none;
+        cursor: pointer;
+    }
