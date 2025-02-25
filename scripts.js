@@ -163,7 +163,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-
 //Timers
 document.addEventListener("DOMContentLoaded", () => {
     const timerList = document.getElementById("timer-list");
@@ -174,7 +173,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const currentTask = document.getElementById("current-task");
     const nextTask = document.getElementById("next-task");
     const totalTimeDisplay = document.getElementById("total-time");
-
 
     // Audio elements
     const startSound = document.getElementById("start-sound");
@@ -220,9 +218,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Function to calculate and display total time
     function updateTotalTime() {
-        const totalTime = timers.reduce((sum, timer) => sum + timer.time, 0);
-        totalTimeDisplay.textContent = `Total Time: ${totalTime}s`;
-    }    
+        const totalSeconds = timers.reduce((sum, timer) => sum + timer.time, 0);
+        const minutes = Math.floor(totalSeconds / 60); // Get minutes
+        const seconds = totalSeconds % 60; // Get remaining seconds
+
+        // Format the display
+        if (minutes > 0) {
+            totalTimeDisplay.textContent = `Total Time: ${minutes} minutes ${seconds} seconds`;
+        } else {
+            totalTimeDisplay.textContent = `Total Time: ${seconds} seconds`;
+        }
+    }
+
+    // Function to update the timers array
+    function updateTimersArray() {
+        timers = Array.from(timerList.children).map(timerItem => {
+            const name = timerItem.querySelector("input[type='text']").value || "Unnamed Task";
+            const time = parseInt(timerItem.querySelector("input[type='number']").value, 10) || 0;
+            return { name, time };
+        }).filter(timer => timer.time > 0); // Filter out invalid timers
+        updateTotalTime(); // Update total time display
+    }
 
     // Function to initialize default timers
     function initializeTimers() {
@@ -241,7 +257,7 @@ document.addEventListener("DOMContentLoaded", () => {
             timeInput.type = "number";
             timeInput.min = "1";
             timeInput.placeholder = "Seconds";
-            timeInput.value = "10"; // Default time
+            timeInput.value = "30"; // Default time
 
             // Remove Button
             const removeButton = document.createElement("button");
@@ -249,7 +265,6 @@ document.addEventListener("DOMContentLoaded", () => {
             removeButton.addEventListener("click", () => {
                 timerList.removeChild(timerItem);
                 updateTimersArray(); // Update timers array when a timer is removed
-                updateTotalTime(); // Update total time display
             });
 
             // Append Inputs and Button to Timer Item
@@ -260,6 +275,8 @@ document.addEventListener("DOMContentLoaded", () => {
             // Append Timer Item to Timer List
             timerList.appendChild(timerItem);
         }
+
+        updateTimersArray(); // Initialize the timers array and total time display
     }
 
     // Call initializeTimers when the page loads
@@ -280,6 +297,7 @@ document.addEventListener("DOMContentLoaded", () => {
         timeInput.type = "number";
         timeInput.min = "1";
         timeInput.placeholder = "Seconds";
+        timeInput.value = "30"; // Default time
 
         // Remove Button
         const removeButton = document.createElement("button");
@@ -287,7 +305,6 @@ document.addEventListener("DOMContentLoaded", () => {
         removeButton.addEventListener("click", () => {
             timerList.removeChild(timerItem);
             updateTimersArray(); // Update timers array when a timer is removed
-            updateTotalTime(); // Update total time display
         });
 
         // Append Inputs and Button to Timer Item
@@ -299,17 +316,11 @@ document.addEventListener("DOMContentLoaded", () => {
         timerList.appendChild(timerItem);
 
         updateTimersArray(); // Update timers array when a new timer is added
-        updateTotalTime(); // Update total time display
     });
 
     // Start Button
     startButton.addEventListener("click", () => {
-        // Populate the timers array with { name, time } objects
-        timers = Array.from(timerList.children).map(timerItem => {
-            const name = timerItem.querySelector("input[type='text']").value || "Unnamed Task";
-            const time = parseInt(timerItem.querySelector("input[type='number']").value, 10) || 0;
-            return { name, time };
-        }).filter(timer => timer.time > 0); // Filter out invalid timers
+        updateTimersArray(); // Ensure the timers array is up-to-date
 
         if (timers.length > 0) {
             currentTimerIndex = 0;
@@ -329,7 +340,6 @@ document.addEventListener("DOMContentLoaded", () => {
         timers = []; // Reset the timers array
         currentTimerIndex = 0; // Reset the current timer index
         initializeTimers(); // Reinitialize default timers
-        updateTotalTime(); // Update total time display
     });
 
     // Preset Button Handlers
@@ -375,7 +385,6 @@ document.addEventListener("DOMContentLoaded", () => {
             removeButton.addEventListener("click", () => {
                 timerList.removeChild(timerItem);
                 updateTimersArray(); // Update timers array when a timer is removed
-                updateTotalTime(); // Update total time display
             });
 
             // Append Inputs and Button to Timer Item
