@@ -2,8 +2,8 @@ const AudioManager = (() => {
     const audio = new Audio(); // Single audio element
 
     const sounds = {
-        start: "Sounds/Timer_Start.m4a",
-        finish: "Sounds/Timer_End.m4a",
+        start: "sounds/timer_Start.m4a",
+        finish: "sounds/timer_End.m4a",
     };
 
     // Function to play a sound
