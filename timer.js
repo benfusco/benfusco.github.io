@@ -253,7 +253,7 @@ document.addEventListener("DOMContentLoaded", () => {
             updateTotalTime(); // Update total time display
         }
 
-
+        console.log("Timer.js loaded!");
 
 
 

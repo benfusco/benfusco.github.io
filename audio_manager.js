@@ -6,6 +6,8 @@ const AudioManager = (() => {
         finish: "sounds/timer_End.m4a",
     };
 
+    console.log("AudioManager.js loaded!");
+
     // Function to play a sound
     function playSound(soundKey) {
         if (sounds[soundKey]) {
