@@ -2,8 +2,8 @@ const AudioManager = (() => {
     const audio = new Audio(); // Single audio element
 
     const sounds = {
-        start: "sounds/timer_Start.m4a",
-        finish: "sounds/timer_End.m4a",
+        start: "/sounds/timer_Start.m4a",
+        finish: "/sounds/timer_End.m4a",
     };
 
     console.log("AudioManager.js loaded!");
