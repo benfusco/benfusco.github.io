@@ -14,25 +14,29 @@ const AudioManager = (() => {
     // Function to play a sound
     function playSound(soundKey) {
         if (sounds[soundKey]) {
+            // Reset the audio and play it
             sounds[soundKey].currentTime = 0; // Reset sound if already playing
             sounds[soundKey].play().catch((e) => {
-                console.log(`Audio playback failed: ${e}`);
+                console.log(`Audio playback failed: ${e}`); // Debugging
             });
+        } else {
+            console.log(`Sound not found: ${soundKey}`); // Debugging
         }
     }
 
-    // Mobile Compatibility: Play an empty sound on first user interaction
     function enableAudioOnMobile() {
+        console.log("Enabling audio for mobile..."); // Debugging
+    
         const unlock = () => {
+            console.log("Unlocking audio..."); // Debugging
             Object.values(sounds).forEach((sound) => {
                 sound.play().then(() => sound.pause()); // Unlock audio
             });
-            document.removeEventListener("touchstart", unlock);
-            document.removeEventListener("click", unlock);
         };
-
-        document.addEventListener("touchstart", unlock, { once: true });
-        document.addEventListener("click", unlock, { once: true });
+    
+        // Re-enable audio on every interaction
+        document.addEventListener("touchstart", unlock);
+        document.addEventListener("click", unlock);
     }
 
     return {
