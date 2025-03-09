@@ -1,22 +1,17 @@
 const AudioManager = (() => {
-    const sounds = {
-        start: new Audio("Sounds/Timer_Start.m4a"),
-        finish: new Audio("Sounds/Timer_End.m4a"),
-    };
+    const audio = new Audio(); // Single audio element
 
-    // Ensure audio files are preloaded (helps with mobile)
-    function preloadAudio() {
-        Object.values(sounds).forEach((sound) => {
-            sound.load();
-        });
-    }
+    const sounds = {
+        start: "Sounds/Timer_Start.m4a",
+        finish: "Sounds/Timer_End.m4a",
+    };
 
     // Function to play a sound
     function playSound(soundKey) {
         if (sounds[soundKey]) {
-            // Reset the audio and play it
-            sounds[soundKey].currentTime = 0; // Reset sound if already playing
-            sounds[soundKey].play().catch((e) => {
+            audio.src = sounds[soundKey]; // Set the audio source
+            audio.currentTime = 0; // Reset sound if already playing
+            audio.play().catch((e) => {
                 console.log(`Audio playback failed: ${e}`); // Debugging
             });
         } else {
@@ -24,30 +19,29 @@ const AudioManager = (() => {
         }
     }
 
+    // Mobile Compatibility: Play an empty sound on first user interaction
     function enableAudioOnMobile() {
-        console.log("Enabling audio for mobile..."); // Debugging
-    
         const unlock = () => {
-            console.log("Unlocking audio..."); // Debugging
-            Object.values(sounds).forEach((sound) => {
-                sound.play().then(() => sound.pause()); // Unlock audio
+            audio.src = sounds.start; // Use any sound file
+            audio.play().then(() => {
+                audio.pause(); // Unlock audio
+                audio.currentTime = 0; // Reset audio
+            }).catch((e) => {
+                console.log(`Audio unlock failed: ${e}`); // Debugging
             });
+            document.removeEventListener("touchstart", unlock);
+            document.removeEventListener("click", unlock);
         };
-    
-        // Re-enable audio on every interaction
-        document.addEventListener("touchstart", unlock);
-        document.addEventListener("click", unlock);
+
+        document.addEventListener("touchstart", unlock, { once: true });
+        document.addEventListener("click", unlock, { once: true });
     }
 
     return {
-        preloadAudio,
         playSound,
         enableAudioOnMobile,
     };
 })();
-
-// Preload audio when the script loads
-AudioManager.preloadAudio();
 
 // Ensure sounds work on mobile
 AudioManager.enableAudioOnMobile();
