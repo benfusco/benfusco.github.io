@@ -25,20 +25,19 @@ document.addEventListener("DOMContentLoaded", () => {
     // Define preset timers
     const presets = {
         stretch: [
-            { name: "Down-Dog", time: 30 },
+            { name: "Down-Dog", time: 45 },
             { name: "Up-Dog", time: 30 },
-            { name: "Down-Dog", time: 15 },
-            { name: "Back", time: 15 },
+            { name: "Down-Dog", time: 20 },
+            { name: "Back", time: 30 },
             { name: "Twist Right", time: 30 },
             { name: "Twist Left", time: 30 },
-            { name: "Back", time: 15 },
+            { name: "Back", time: 20 },
+            { name: "Vietnames", time: 45 },
             { name: "Hips", time: 30 },
             { name: "Left Leg", time: 30 },
-            { name: "Hips", time: 10 },
+            { name: "Middle", time: 20 },
             { name: "Right Leg", time: 30 },
-            { name: "Hips Forward", time: 15 },
-            { name: "Hips Forward", time: 15 },
-            { name: "Vietnames", time: 45 },
+            { name: "Hips Forward", time: 45 },
         ],
         hangboard: [
             { name: "Prep", time: 10 },
