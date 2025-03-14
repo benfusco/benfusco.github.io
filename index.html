@@ -15,10 +15,15 @@
 <body>
     <!-- Navigation Menu -->
     <nav>
-        <div class="nav-header"><a href="#about">Bensite</a></div>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
+        <div class="nav-header"><a href="index.html">Bensite</a></div>
+        <button class="hamburger" aria-label="Toggle navigation">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="index.html">About</a></li>
+            <li><a href="index.html#portfolio">Portfolio</a></li>
             <li><a href="stretch.html">Stretch</a></li>
             <li><a href="#footer">Contact</a></li>
         </ul>
@@ -36,9 +41,25 @@
                 <p>Thank you for visiting, and enjoy!</p>  
             </div>    
 
-               
         </section>
     </main>
+
+    <section id="portfolio" class="section">
+        <h1>Portfolio</h1>
+        
+        <!--Portfolio Flipbook Container-->
+        <div id="portfolio_veiwer" class="image-viewer-container">
+            <img id="current-image" src="portfolio_images/Portfolio_Fall 2024_Images_Spreads.jpg" alt="Front Page">
+            <div class="navigation-buttons">
+                <button id="prev-button">&larr;</button>
+                <button id="next-button">&rarr;</button>
+            </div>
+            <div id="page-indicator">Spread 1 of 20</div>
+        </div>
+        
+        <p>This portfolio was completed December of 2024</p>
+        <p>Also viewable on <a href="https://issuu.com/benfusco/docs/portfolio_winter2024_pages-compressed">issuu</a></p>
+    </section>
 
 <!-- Contact Section -->
 <footer id="footer">
@@ -55,5 +76,6 @@
 
     <!-- Link to JavaScript -->
     <script src="main.js"></script>
+    <script src="portfolio.js"></script>
 </body>
 </html>

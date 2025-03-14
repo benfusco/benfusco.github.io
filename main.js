@@ -27,9 +27,22 @@ document.querySelectorAll('nav a').forEach(anchor => {
 });
 
 
+//Hamburger Menu
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+const navLinksList = document.querySelectorAll('.nav-links a'); // Select all links inside nav-links
 
+// Toggle the menu when the hamburger is clicked
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
 
-
+// Close the menu when a link is clicked
+navLinksList.forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('active'); // Hide the dropdown menu
+    });
+});
 
 
 // Footer
