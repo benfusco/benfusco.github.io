@@ -1,9 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const username = "benfusco"; // Replace with your GitHub username
-    const repo = "benfusco.github.io"; // Replace with your repository name
-    const folder = "object_images"; // Replace with your folder name
+    const username = "benfusco";
+    const repo = "benfusco.github.io";
+    const folder = "object_images";
 
     const apiUrl = `https://api.github.com/repos/${username}/${repo}/contents/${folder}`;
+    console.log("API URL:", apiUrl); // Debug: Check the API URL
 
     let currentIndex = 0;
     let images = [];
@@ -26,12 +27,15 @@ document.addEventListener("DOMContentLoaded", () => {
     // Fetch images from GitHub
     async function fetchImages() {
         try {
+            console.log("Fetching images from:", apiUrl); // Debug: Check the API URL
             const response = await fetch(apiUrl);
             if (!response.ok) {
-                throw new Error("Failed to fetch images");
+                throw new Error(`Failed to fetch images: ${response.status} ${response.statusText}`);
             }
             const data = await response.json();
+            console.log("API Response:", data); // Debug: Check the API response
             images = data.filter(file => file.type === "file" && file.name.match(/\.(jpeg|jpg|png|gif)$/i));
+            console.log("Filtered images:", images); // Debug: Check filtered images
             updateImage(); // Display the first image after fetching
         } catch (error) {
             console.error("Error fetching images:", error);
