@@ -2,9 +2,9 @@
 
 document.addEventListener("DOMContentLoaded", () => {
     const images = [
-        "object_images/Easle Drawing Test-01.jpg",
-        "object_images/Easle Drawing Test-02.jpg",
-        "object_images/Easle Drawing Test-03.jpg",
+        "object_images/84C89669-7731-4A08-A053-3E6DF93E9175.jpeg",
+        "object_images/B7B557BE-FDFA-476D-BCCC-A1B018D906A1.jpeg",
+        "object_images/B8AB3553-C320-44D0-BD94-1E9DAA8241A9.jpeg",
 
     ];
 
