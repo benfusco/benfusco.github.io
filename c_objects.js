@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const repo = "benfusco.github.io"; // Replace with your repository name
     const folder = "object_images"; // Replace with your folder name
 
-    const apiUrl = `https://api.github.com/repos/${benfusco}/${benfusco.github.io}/contents/${object_images}`;
+    const apiUrl = `https://api.github.com/repos/${username}/${repo}/contents/${folder}`;
 
     let currentIndex = 0;
     let images = [];
