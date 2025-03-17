@@ -12,7 +12,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const prevButton = document.getElementById("prev-button");
     const nextButton = document.getElementById("next-button");
     const pageIndicator = document.getElementById("page-indicator");
-    const metadataDisplay = document.getElementById("metadata-display");
+    const titleDisplay = document.getElementById("title");
+    const uploaderDisplay = document.getElementById("uploader");
+    const uploadDateDisplay = document.getElementById("upload-date");
 
     // Function to parse metadata from file name
     function parseMetadata(filename) {
@@ -38,13 +40,13 @@ document.addEventListener("DOMContentLoaded", () => {
             // Parse and display metadata
             const metadata = parseMetadata(images[currentIndex].name);
             if (metadata) {
-                metadataDisplay.innerHTML = `
-                    <p><strong>Title:</strong> ${metadata.title}</p>
-                    <p><strong>Uploader:</strong> ${metadata.uploader}</p>
-                    <p><strong>Upload Date:</strong> ${metadata.upload_date}</p>
-                `;
+                titleDisplay.textContent = metadata.title;
+                uploaderDisplay.textContent = metadata.uploader;
+                uploadDateDisplay.textContent = metadata.upload_date;
             } else {
-                metadataDisplay.innerHTML = "<p>No metadata available for this image.</p>";
+                titleDisplay.textContent = "Unknown";
+                uploaderDisplay.textContent = "Unknown";
+                uploadDateDisplay.textContent = "Unknown";
             }
         }
     }

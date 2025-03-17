@@ -36,16 +36,20 @@
             <p>The goal of objects every week is to make progress on physically based objects that contribute towards bigger concepts. This progress could manifest in many forms, but all weekly progress should contribute to a three-dimensional object. That may be an embodiment of the object as an image, a drawing of/ for an object, or progress on the fabrication of said object. The goal is that there is enough freedom to be creative and artistic but always contribute to a bigger picture — for the sake of making and for progress within the world. </p>
 
         <!-- Flipbook Container-->
-        <div id="objects_veiwer" class="image-viewer-container">
-            <img id="current-image" src="object_images/84C89669-7731-4A08-A053-3E6DF93E9175.jpeg" alt="Front Page">
-            <div class="navigation-buttons">
-                <button id="prev-button">&larr;</button>
-                <button id="next-button">&rarr;</button>
+        <div id="image-viewer">
+            <img id="current-image" src="" alt="Current Image">
+            <div id="controls">
+                <button id="prev-button">Previous</button>
+                <span id="page-indicator"></span>
+                <button id="next-button">Next</button>
             </div>
-            <div id="page-indicator">Spread 1 of 20</div>
+            
+            <div id="metadata-display">
+                <p>Title: <span id="title"></span></p>
+                <p>Uploader: <span id="uploader"></span></p>
+                <p>Upload Date: <span id="upload-date"></span></p>
+            </div>
         </div>
-
-        <div id="metadata-display"> </div>
     </main>
 
 
