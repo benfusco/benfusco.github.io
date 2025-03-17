@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const folder = "object_images";
 
     const apiUrl = `https://api.github.com/repos/${username}/${repo}/contents/${folder}`;
-    console.log("API URL:", apiUrl); // Debug: Check the API URL
 
     let currentIndex = 0;
     let images = [];
@@ -13,30 +12,54 @@ document.addEventListener("DOMContentLoaded", () => {
     const prevButton = document.getElementById("prev-button");
     const nextButton = document.getElementById("next-button");
     const pageIndicator = document.getElementById("page-indicator");
+    const metadataDisplay = document.getElementById("metadata-display");
 
-    // Function to update the image, page indicator, and apply small-image class
+    // Function to parse metadata from file name
+    function parseMetadata(filename) {
+        const parts = filename.split("_");
+        if (parts.length === 3) {
+            return {
+                title: parts[0],
+                uploader: parts[1],
+                upload_date: parts[2].split(".")[0], // Remove file extension
+            };
+        }
+        return null; // Return null if the file name doesn't match the expected format
+    }
+
+    // Function to update the image, page indicator, and metadata
     function updateImage() {
         if (images.length > 0) {
             currentImage.src = images[currentIndex].download_url;
             prevButton.disabled = currentIndex === 0;
             nextButton.disabled = currentIndex === images.length - 1;
             pageIndicator.textContent = ` ${currentIndex + 1} of ${images.length}`;
+
+            // Parse and display metadata
+            const metadata = parseMetadata(images[currentIndex].name);
+            if (metadata) {
+                metadataDisplay.innerHTML = `
+                    <p><strong>Title:</strong> ${metadata.title}</p>
+                    <p><strong>Uploader:</strong> ${metadata.uploader}</p>
+                    <p><strong>Upload Date:</strong> ${metadata.upload_date}</p>
+                `;
+            } else {
+                metadataDisplay.innerHTML = "<p>No metadata available for this image.</p>";
+            }
         }
     }
 
     // Fetch images from GitHub
     async function fetchImages() {
         try {
-            console.log("Fetching images from:", apiUrl); // Debug: Check the API URL
             const response = await fetch(apiUrl);
             if (!response.ok) {
-                throw new Error(`Failed to fetch images: ${response.status} ${response.statusText}`);
+                throw new Error("Failed to fetch images");
             }
             const data = await response.json();
-            console.log("API Response:", data); // Debug: Check the API response
             images = data.filter(file => file.type === "file" && file.name.match(/\.(jpeg|jpg|png|gif)$/i));
-            console.log("Filtered images:", images); // Debug: Check filtered images
-            updateImage(); // Display the first image after fetching
+            console.log("Fetched images:", images);
+            updateImage();
         } catch (error) {
             console.error("Error fetching images:", error);
         }
