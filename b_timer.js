@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
         hangboard: [
             { name: "Prep", time: 10 },
             { name: "Jug Hang", time: 40 },
-            { name: "Rest", time: 30 },
+            { name: "Rest", time: 45 },
             { name: "4 Finger Hang", time: 15 },
             { name: "Rest", time: 30 },
             { name: "Pull Up", time: 10 },
@@ -54,10 +54,11 @@ document.addEventListener("DOMContentLoaded", () => {
             { name: "Rest", time: 30 },
             { name: "Pull Up", time: 10 },
             { name: "Hang + Crunch", time: 30 },
-            { name: "Rest", time: 30 },
+            { name: "Rest", time: 60 },
             { name: "3 Finger Hang", time: 10 },
             { name: "Rest", time: 30 },
             { name: "Pull Up", time: 10 },
+            { name: "Rest", time: 30 },
             { name: "Jug Hang", time: 40 },
         ],
         meditate: [
