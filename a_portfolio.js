@@ -2,26 +2,24 @@
 
 document.addEventListener("DOMContentLoaded", () => {
     const images = [
-        "portfolio_images/Portfolio_Fall 2024_Images_Spreads.jpg",
-        "portfolio_images/Portfolio_Fall 2024_Images_Spreads3.jpg",
-        "portfolio_images/Portfolio_Fall 2024_Images_Spreads4.jpg",
-        "portfolio_images/Portfolio_Fall 2024_Images_Spreads5.jpg",
-        "portfolio_images/Portfolio_Fall 2024_Images_Spreads6.jpg",
-        "portfolio_images/Portfolio_Fall 2024_Images_Spreads7.jpg",
-        "portfolio_images/Portfolio_Fall 2024_Images_Spreads8.jpg",
-        "portfolio_images/Portfolio_Fall 2024_Images_Spreads9.jpg",
-        "portfolio_images/Portfolio_Fall 2024_Images_Spreads10.jpg",
-        "portfolio_images/Portfolio_Fall 2024_Images_Spreads11.jpg",
-        "portfolio_images/Portfolio_Fall 2024_Images_Spreads12.jpg",
-        "portfolio_images/Portfolio_Fall 2024_Images_Spreads13.jpg",
-        "portfolio_images/Portfolio_Fall 2024_Images_Spreads14.jpg",
-        "portfolio_images/Portfolio_Fall 2024_Images_Spreads15.jpg",
-        "portfolio_images/Portfolio_Fall 2024_Images_Spreads16.jpg",
-        "portfolio_images/Portfolio_Fall 2024_Images_Spreads17.jpg",
-        "portfolio_images/Portfolio_Fall 2024_Images_Spreads18.jpg",
-        "portfolio_images/Portfolio_Fall 2024_Images_Spreads19.jpg",
-        "portfolio_images/Portfolio_Fall 2024_Images_Spreads20.jpg",
-    ];
+"portfolio_images/Portfolio_Winter_26_0.jpeg",
+"portfolio_images/Portfolio_Winter_26_1.jpeg",
+"portfolio_images/Portfolio_Winter_26_2.jpeg",
+"portfolio_images/Portfolio_Winter_26_3.jpeg",
+"portfolio_images/Portfolio_Winter_26_4.jpeg",
+"portfolio_images/Portfolio_Winter_26_5.jpeg",
+"portfolio_images/Portfolio_Winter_26_6.jpeg",
+"portfolio_images/Portfolio_Winter_26_7.jpeg",
+"portfolio_images/Portfolio_Winter_26_8.jpeg",
+"portfolio_images/Portfolio_Winter_26_9.jpeg",
+"portfolio_images/Portfolio_Winter_26_10.jpeg",
+"portfolio_images/Portfolio_Winter_26_11.jpeg",
+"portfolio_images/Portfolio_Winter_26_12.jpeg",
+"portfolio_images/Portfolio_Winter_26_13.jpeg",
+"portfolio_images/Portfolio_Winter_26_14.jpeg",
+"portfolio_images/Portfolio_Winter_26_15.jpeg",
+
+];
 
     let currentIndex = 0;
 
