@@ -2,22 +2,22 @@
 
 document.addEventListener("DOMContentLoaded", () => {
     const images = [
-"portfolio_images/Portfolio_Winter_26_0.jpeg",
-"portfolio_images/Portfolio_Winter_26_1.jpeg",
-"portfolio_images/Portfolio_Winter_26_2.jpeg",
-"portfolio_images/Portfolio_Winter_26_3.jpeg",
-"portfolio_images/Portfolio_Winter_26_4.jpeg",
-"portfolio_images/Portfolio_Winter_26_5.jpeg",
-"portfolio_images/Portfolio_Winter_26_6.jpeg",
-"portfolio_images/Portfolio_Winter_26_7.jpeg",
-"portfolio_images/Portfolio_Winter_26_8.jpeg",
-"portfolio_images/Portfolio_Winter_26_9.jpeg",
-"portfolio_images/Portfolio_Winter_26_10.jpeg",
-"portfolio_images/Portfolio_Winter_26_11.jpeg",
-"portfolio_images/Portfolio_Winter_26_12.jpeg",
-"portfolio_images/Portfolio_Winter_26_13.jpeg",
-"portfolio_images/Portfolio_Winter_26_14.jpeg",
-"portfolio_images/Portfolio_Winter_26_15.jpeg",
+"portfolio_images/Portfolio_Winter_26_0.jpg",
+"portfolio_images/Portfolio_Winter_26_1.jpg",
+"portfolio_images/Portfolio_Winter_26_2.jpg",
+"portfolio_images/Portfolio_Winter_26_3.jpg",
+"portfolio_images/Portfolio_Winter_26_4.jpg",
+"portfolio_images/Portfolio_Winter_26_5.jpg",
+"portfolio_images/Portfolio_Winter_26_6.jpg",
+"portfolio_images/Portfolio_Winter_26_7.jpg",
+"portfolio_images/Portfolio_Winter_26_8.jpg",
+"portfolio_images/Portfolio_Winter_26_9.jpg",
+"portfolio_images/Portfolio_Winter_26_10.jpg",
+"portfolio_images/Portfolio_Winter_26_11.jpg",
+"portfolio_images/Portfolio_Winter_26_12.jpg",
+"portfolio_images/Portfolio_Winter_26_13.jpg",
+"portfolio_images/Portfolio_Winter_26_14.jpg",
+"portfolio_images/Portfolio_Winter_26_15.jpg",
 
 ];
 
