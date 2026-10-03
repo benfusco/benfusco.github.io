@@ -441,7 +441,7 @@
 /* ===== Precedents page ===== */
 /* Scoped to body.prec-page so nothing else on the site is affected. */
  
-.prec-page{--prec-ink:#1a1a1a;--prec-mute:#6b6b6b;--prec-line:#cfcfca;--prec-acc:#1f4fd8;--prec-card:grey}
+.prec-page{--prec-ink:#1a1a1a;--prec-mute:#6b6b6b;--prec-line:#cfcfca;--prec-acc:#1f4fd8;--prec-card:transparent}
 .prec-page *{box-sizing:border-box}
  
 .prec-intro{display:flex;flex-direction:column;align-items:center;text-align:center;padding:20px}
@@ -489,8 +489,8 @@
 .prec-page .prec-actions{display:flex;gap:10px;margin-top:14px}
 .prec-page .prec-actions button{padding:7px 14px;border:1px solid var(--prec-ink);border-radius:6px;font-size:16px}
 .prec-page #e_msg{min-height:1.4em;font-size:14px}
-.prec-page #e_msg.ok{color:#1d7a3e}
-.prec-page #e_msg.err{color:#b3261e}
+.prec-page #e_msg.ok{color:#77b535}
+.prec-page #e_msg.err{color:#de2c18}
 @media (max-width:560px){.prec-page .prec-row{grid-template-columns:1fr}}
  
 /* click-to-edit cards */
@@ -512,3 +512,8 @@
 .prec-page .prec-marker{width:16px;height:16px;border-radius:50%;background:var(--prec-marker);border:2px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.35)}
 .prec-page .prec-cluster{display:flex;align-items:center;justify-content:center;border-radius:50%;background:var(--prec-marker);color:var(--prec-marker-text);border:2px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.35);font-size:14px;font-weight:700}
 .prec-page #map .leaflet-popup-content-wrapper{border-radius:10px}
+
+/* timeline lanes and labels */
+.prec-page .timeline .col{z-index:1}
+.prec-page .yearlabel{margin-bottom:6px;font-size:16px;font-weight:700}
+.prec-page .stem{position:absolute;width:0;border-left:1px solid var(--prec-line);z-index:0}

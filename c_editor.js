@@ -26,15 +26,23 @@
   /* ---------- GitHub token ---------- */
   const cfg = () => ({ repo: REPO, branch: BRANCH, path: DATA_PATH, token: $('e_token').value.trim() });
   try { $('e_token').value = localStorage.getItem('precedent-token') || ''; } catch (e) {}
-  $('e_token').addEventListener('change', () => {
-    try { localStorage.setItem('precedent-token', $('e_token').value.trim()); say('Token saved in this browser.'); }
-    catch (e) { say('Could not store the token.', false); }
+  // Saved as soon as it is typed or pasted. Clear / deselecting never touches this field.
+  $('e_token').addEventListener('input', () => {
+    try { localStorage.setItem('precedent-token', $('e_token').value.trim()); }
+    catch (e) {}
   });
+  $('e_token').addEventListener('change', () => say('Token saved in this browser.'));
 
   const api = (path, opts = {}) => fetch(`https://api.github.com/repos/${cfg().repo}/contents/${path}`, {
     ...opts,
     headers: { Accept: 'application/vnd.github+json', Authorization: `Bearer ${cfg().token}` }
   });
+
+  const fail = async (what, res) => {
+    let detail = '';
+    try { detail = (await res.json()).message || ''; } catch (e) {}
+    return new Error(`${what}: GitHub returned ${res.status}${detail ? ' (' + detail + ')' : ''}`);
+  };
 
   // Reads the latest file from GitHub, applies `change`, writes it back.
   async function writeProjects(change, message) {
@@ -43,10 +51,10 @@
     const r = await api(`${c.path}?ref=${c.branch}`);
     let latest = [], sha;
     if (r.ok) { const j = await r.json(); sha = j.sha; latest = parseJs(b64dec(j.content)); }
-    else if (r.status !== 404) throw new Error('GitHub returned ' + r.status);
+    else if (r.status !== 404) throw await fail('Could not read the data file', r);
     const next = change(latest);
     const w = await api(c.path, { method: 'PUT', body: JSON.stringify({ message, branch: c.branch, sha, content: b64enc(toJs(next)) }) });
-    if (!w.ok) throw new Error('GitHub returned ' + w.status);
+    if (!w.ok) throw await fail('Could not save', w);
     projects = next;
     refreshBoard(); fillPicker();
   }
@@ -66,7 +74,7 @@
     const existing = await api(`${path}?ref=${cfg().branch}`);
     const sha = existing.ok ? (await existing.json()).sha : undefined;
     const r = await api(path, { method: 'PUT', body: JSON.stringify({ message: `Add image ${name}`, branch: cfg().branch, sha, content: data }) });
-    if (!r.ok) throw new Error('Image upload failed: ' + r.status);
+    if (!r.ok) throw await fail('Image upload failed', r);
     return path;
   }
 
@@ -115,6 +123,20 @@
   document.addEventListener('prec:edit', e => {
     loadIntoForm(e.detail);
     $('editor').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  // click empty space (not a card, the form, or the view buttons) to deselect; Escape works too.
+  // Dragging the board to pan does not count as a click.
+  let downAt = null;
+  document.addEventListener('pointerdown', e => { downAt = { x: e.clientX, y: e.clientY }; });
+  document.addEventListener('click', e => {
+    if (!editingId) return;
+    if (downAt && Math.hypot(e.clientX - downAt.x, e.clientY - downAt.y) > 4) return;
+    if (e.target.closest('.card, #editor, .prec-views, .leaflet-popup, .zoom')) return;
+    clearForm(); say('');
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && editingId && !e.target.closest('input, select')) { clearForm(); say(''); }
   });
 
   $('e_pick').onchange = e => e.target.value ? loadIntoForm(e.target.value) : clearForm();

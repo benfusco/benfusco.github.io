@@ -9,6 +9,9 @@ const el = (tag, cls, text) => {
   return e;
 };
 
+// Years: negative numbers are BCE (e.g. -500 shows as 500 BCE)
+const fmtYear = y => y == null ? '' : y < 0 ? `${-y} BCE` : String(y);
+
 function makeCard(p) {
   const card = el('div', 'card'), info = el('div'), title = el('b');
   card.dataset.id = p.id;
@@ -24,7 +27,7 @@ function makeCard(p) {
   } else {
     title.textContent = p.title;
   }
-  info.append(title, el('small', '', p.type || ''), el('small', '', p.location || ''), el('small', '', p.year ?? ''));
+  info.append(title, el('small', '', p.type || ''), el('small', '', p.location || ''), el('small', '', fmtYear(p.year)));
   card.appendChild(info);
   if (p.image) {
     const img = el('img');
@@ -103,7 +106,9 @@ function enablePanZoom(board, world) {
 }
 
 const TYPES = ['Building', 'Hypothetical', 'Writing', 'Drawing', 'Painting', 'Sculpture'];
-const PX_PER_YEAR = 320;   // horizontal scale of the timeline
+const MAX_PX_PER_YEAR = 320;   // timeline never spreads wider than this per year
+const LANE_GAP = 24;           // vertical space between rows of overlapping columns
+const NICE_STEPS = [1, 2, 5, 10, 25, 50, 100, 250, 500, 1000, 2500, 5000];
 const COL_W = 280;         // width of a year column
 const COL_TOP = 70;        // space above cards for the axis
 
@@ -134,50 +139,85 @@ function buildMatrix(projects, world) {
   });
 }
 
-// True-to-scale timeline: x position = year. Same-year projects stack in one column.
+// Timeline scaled to the dates available: the whole range is fitted to the width of the board,
+// whether that is a few years or thousands (never wider than MAX_PX_PER_YEAR per year). Columns that would overlap
+// are placed on separate rows ("lanes"), with a thin line back to their spot on the axis.
 // Must be called after `world` is in the page so heights can be measured.
-function buildTimeline(projects, world) {
+function buildTimeline(projects, world, viewWidth) {
   world.classList.add('timeline');
   const dated = projects.filter(p => Number.isFinite(p.year));
   const undated = projects.filter(p => !Number.isFinite(p.year));
   const groups = groupBy(dated, p => p.year);
-  const years = dated.map(p => p.year);
-  const min = years.length ? Math.min(...years) : 0;
-  const max = years.length ? Math.max(...years) : 0;
-  let width = years.length ? (max - min) * PX_PER_YEAR + COL_W : 0;
+  const years = Object.keys(groups).map(Number).sort((a, b) => a - b);
+  const min = years.length ? years[0] : 0;
+  const max = years.length ? years[years.length - 1] : 0;
+  const range = max - min;
+  // fit the whole date range to the width of the board (leaving room for the last column)
+  const avail = Math.max(500, viewWidth - COL_W * (undated.length ? 2 : 1) - 140);
+  const ppy = range ? Math.min(MAX_PX_PER_YEAR, avail / range) : MAX_PX_PER_YEAR;  // pixels per year
+  let width = years.length ? range * ppy + COL_W : 0;
 
   const axis = el('div', 'axis');
   world.appendChild(axis);
-
   const addTick = (label, left, cls) => {
     const t = el('div', 'tick' + (cls ? ' ' + cls : ''), label);
     t.style.left = left + 'px';
     world.appendChild(t);
   };
-  const addColumn = (list, left) => {
-    const col = el('div', 'col'), stack = el('div', 'stack');
-    list.sort((a, b) => (a.designer || '').localeCompare(b.designer || '') || a.title.localeCompare(b.title))
-        .forEach(p => stack.appendChild(makeCard(p)));
-    col.style.left = left + 'px';
-    col.appendChild(stack);
-    world.appendChild(col);
-  };
 
+  // axis ticks at "nice" intervals that stay readable at this scale
   if (years.length) {
-    for (let y = min; y <= max; y++) addTick(y, (y - min) * PX_PER_YEAR, y % 10 === 0 ? 'decade' : '');
-    Object.keys(groups).forEach(y => addColumn(groups[y], (y - min) * PX_PER_YEAR));
+    const step = NICE_STEPS.find(s => s * ppy >= 90) || NICE_STEPS[NICE_STEPS.length - 1];
+    for (let y = Math.ceil(min / step) * step; y <= max; y += step) {
+      addTick(fmtYear(y), (y - min) * ppy, y % (step * 5) === 0 ? 'decade' : '');
+    }
   }
+
+  const items = years.map(y => ({ left: (y - min) * ppy, list: groups[y], label: fmtYear(y) }));
   if (undated.length) {
     const left = width ? width + 80 : 0;
     addTick('Undated', left, 'decade');
-    addColumn(undated, left);
+    items.push({ left, list: undated, label: 'Undated' });
     width = left + COL_W;
   }
 
+  // assign each column to the first lane where it doesn't overlap
+  const laneEdge = [];
+  items.forEach(it => {
+    let lane = laneEdge.findIndex(edge => edge + 16 <= it.left);
+    if (lane === -1) lane = laneEdge.length;
+    laneEdge[lane] = it.left + COL_W;
+    it.lane = lane;
+
+    const col = el('div', 'col'), stack = el('div', 'stack');
+    it.list.sort((a, b) => (a.designer || '').localeCompare(b.designer || '') || a.title.localeCompare(b.title))
+      .forEach(p => stack.appendChild(makeCard(p)));
+    col.append(el('div', 'yearlabel', it.label), stack);
+    col.style.left = it.left + 'px';
+    world.appendChild(col);
+    it.col = col;
+  });
+
+  // measure, then stack the lanes one under another
+  const laneH = laneEdge.map(() => 0);
+  items.forEach(it => { laneH[it.lane] = Math.max(laneH[it.lane], it.col.offsetHeight); });
+  const laneTop = [];
+  let y = COL_TOP;
+  laneH.forEach((h, i) => { laneTop[i] = y; y += h + LANE_GAP; });
+
+  items.forEach(it => {
+    const top = laneTop[it.lane];
+    it.col.style.top = top + 'px';
+    const stem = el('div', 'stem');
+    stem.style.left = it.left + 'px';
+    stem.style.top = '36px';
+    stem.style.height = (top - 36) + 'px';
+    world.appendChild(stem);
+  });
+
   axis.style.width = width + 'px';
   world.style.width = width + 'px';
-  const bottoms = [...world.querySelectorAll('.col')].map(c => c.offsetTop + c.offsetHeight);
-  world.style.height = Math.max(COL_TOP, ...bottoms) + 'px';
+  world.style.height = Math.max(COL_TOP, y - LANE_GAP) + 'px';
 }
 
 // Free key from https://carto.com/basemaps/apikey (emailed instantly, no account). Paste it between the quotes.
@@ -211,8 +251,15 @@ function buildMap(mount, projects) {
   L.tileLayer(tiles.url, tiles).addTo(leafletMap);
 
   const located = projects.filter(p => Number.isFinite(p.lat) && Number.isFinite(p.lng));
-  const layer = L.markerClusterGroup ? L.markerClusterGroup() : L.layerGroup();
-  located.forEach(p => L.marker([p.lat, p.lng]).bindPopup(() => makeCard(p), { minWidth: 240 }).addTo(layer));
+  // Marker and cluster looks are set in styles.css (.prec-marker, .prec-cluster)
+  const markerIcon = L.divIcon({ className: 'prec-marker', iconSize: [16, 16] });
+  const clusterIcon = c => L.divIcon({
+    html: `<span>${c.getChildCount()}</span>`, className: 'prec-cluster', iconSize: [34, 34]
+  });
+  const layer = L.markerClusterGroup
+    ? L.markerClusterGroup({ iconCreateFunction: clusterIcon, showCoverageOnHover: false })
+    : L.layerGroup();
+  located.forEach(p => L.marker([p.lat, p.lng], { icon: markerIcon }).bindPopup(() => makeCard(p), { minWidth: 240 }).addTo(layer));
   leafletMap.addLayer(layer);
   if (located.length) leafletMap.fitBounds(located.map(p => [p.lat, p.lng]), { padding: [40, 40], maxZoom: 12 });
 
@@ -236,7 +283,7 @@ function renderBoard(projects, view) {
   board.appendChild(world);
   mount.appendChild(board);
 
-  if (view === 'timeline') buildTimeline(projects, world);
+  if (view === 'timeline') buildTimeline(projects, world, board.clientWidth);
   else buildMatrix(projects, world);
 
   enablePanZoom(board, world);
