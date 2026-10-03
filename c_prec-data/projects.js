@@ -741,7 +741,7 @@ const c_projects = [
     "lat": -23.5505,
     "lng": -46.6333,
     "url": "https://ofhouses.com/post/96778979900/073-marcos-acayaba-h%C3%A9lio-olga-de-souza-jr",
-    "image": ""
+    "image": "https://64.media.tumblr.com/fca2e0eaceddc07ce2cffe476cc26d1f/tumblr_nbh9y4vVel1twhq1io2_640.jpg"
   },
   {
     "id": "shade-pavilion",
