@@ -437,3 +437,78 @@
         border: none;
         cursor: pointer;
     }
+
+/* ===== Precedents page ===== */
+/* Scoped to body.prec-page so nothing else on the site is affected. */
+ 
+.prec-page{--prec-ink:#1a1a1a;--prec-mute:#6b6b6b;--prec-line:#cfcfca;--prec-acc:#1f4fd8;--prec-card:grey}
+.prec-page *{box-sizing:border-box}
+ 
+.prec-intro{display:flex;flex-direction:column;align-items:center;text-align:center;padding:20px}
+ 
+/* cards */
+.prec-page #view{padding:20px 0}
+.prec-page .card{display:flex;gap:10px;justify-content:space-between;padding:10px 12px;border:1px dashed var(--prec-ink);border-radius:10px;background:var(--prec-card);font-size:14px;line-height:1.4}
+.prec-page .card b{display:block}
+.prec-page .card small{display:block;color:var(--prec-ink)}
+.prec-page .card a{color:var(--prec-acc)}
+.prec-page .card img{width:64px;height:64px;object-fit:cover;border-radius:4px;flex:none}
+.prec-page .stack{display:grid;gap:10px}
+.prec-page .empty{color:var(--prec-mute)}
+ 
+/* matrix board */
+.prec-page #board{position:relative;height:75vh;overflow:hidden;border:1px solid var(--prec-line);border-radius:8px;cursor:grab;touch-action:none;
+  background-image:radial-gradient(var(--prec-line) 1px,transparent 1px);background-size:24px 24px}
+.prec-page #board.grab{cursor:grabbing}
+.prec-page #world{position:absolute;top:0;left:0;display:flex;gap:40px;align-items:flex-start;transform-origin:0 0}
+.prec-page .col{flex:0 0 300px}
+.prec-page .col h2{margin:0 0 12px;padding-bottom:8px;border-bottom:1px solid var(--prec-ink);font-size:16px}
+.prec-page .zoom{position:absolute;right:12px;bottom:12px;display:flex;gap:6px;z-index:5}
+.prec-page .zoom button{padding:6px 12px;border:1px solid var(--prec-line);border-radius:6px;font-size:14px}
+ 
+/* view switch */
+.prec-page .prec-views{display:flex;gap:16px;justify-content:center}
+.prec-page .prec-views button{padding:4px 0;border-bottom:2px solid transparent}
+.prec-page .prec-views button.on{border-bottom-color:currentColor}
+ 
+/* true-to-scale timeline */
+.prec-page #world.timeline{display:block}
+.prec-page .timeline .col{position:absolute;top:70px;width:280px}
+.prec-page .axis{position:absolute;top:36px;left:0;height:0;border-top:1px solid var(--prec-ink)}
+.prec-page .tick{position:absolute;top:10px;height:34px;padding-left:6px;border-left:1px solid var(--prec-ink);font-size:13px;line-height:1.2;color:var(--prec-mute)}
+.prec-page .tick.decade{font-size:16px;font-weight:700;color:var(--prec-ink)}
+ 
+/* add / edit section */
+.prec-page .prec-editor{max-width:760px;margin:40px auto 0;text-align:left}
+.prec-page .prec-editor h2{font-size:20px;margin:0 0 12px}
+.prec-page .prec-editor label{display:block;margin-top:10px;font-size:14px;color:var(--prec-mute)}
+.prec-page .prec-editor input,.prec-page .prec-editor select{width:100%;margin-top:3px;padding:7px 9px;border:1px solid var(--prec-line);border-radius:6px;background:#fff;color:var(--prec-ink);font:inherit;font-size:16px}
+.prec-page .prec-editor details{margin-bottom:8px;color:var(--prec-mute)}
+.prec-page .prec-editor summary{cursor:pointer}
+.prec-page .prec-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.prec-page .prec-actions{display:flex;gap:10px;margin-top:14px}
+.prec-page .prec-actions button{padding:7px 14px;border:1px solid var(--prec-ink);border-radius:6px;font-size:16px}
+.prec-page #e_msg{min-height:1.4em;font-size:14px}
+.prec-page #e_msg.ok{color:#1d7a3e}
+.prec-page #e_msg.err{color:#b3261e}
+@media (max-width:560px){.prec-page .prec-row{grid-template-columns:1fr}}
+ 
+/* click-to-edit cards */
+.prec-page .card{cursor:pointer}
+.prec-page .card.selected{outline:2px solid var(--prec-acc);outline-offset:2px}
+ 
+/* matrix grid: designers across, types down */
+.prec-page #world.matrix{display:grid;grid-template-columns:110px repeat(var(--cols),300px);gap:16px 40px;align-items:start}
+.prec-page .colhead{margin:0;padding-bottom:8px;border-bottom:1px solid var(--prec-ink);font-size:16px}
+.prec-page .rowlabel{padding-top:12px;border-top:1px solid var(--prec-line);font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+.prec-page .cell{padding-top:12px;border-top:1px solid var(--prec-line);min-height:40px}
+ 
+/* map */
+.prec-page #map{height:75vh;border:1px solid var(--prec-line);border-radius:8px}
+.prec-page #map .leaflet-popup-content{margin:10px}
+ 
+/* map markers, clusters and popups: change colors and sizes here */
+.prec-page #map{--prec-marker:rgb(107,172,216);--prec-marker-text:#fff}
+.prec-page .prec-marker{width:16px;height:16px;border-radius:50%;background:var(--prec-marker);border:2px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.35)}
+.prec-page .prec-cluster{display:flex;align-items:center;justify-content:center;border-radius:50%;background:var(--prec-marker);color:var(--prec-marker-text);border:2px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.35);font-size:14px;font-weight:700}
+.prec-page #map .leaflet-popup-content-wrapper{border-radius:10px}

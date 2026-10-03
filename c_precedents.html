@@ -1,0 +1,118 @@
+<!-- benfusco.github.io Bensite -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!--Adobe Font Link-->
+     <link rel="stylesheet" href="https://use.typekit.net/sfv5qlj.css">
+     <!-- Link to CSS -->
+     <link rel="stylesheet" href="styles.css">
+     <!--Map Styles-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.Default.css">
+
+    <title>Bensite</title>
+</head>
+
+<body class="prec-page">
+
+    <!-- Navigation Menu -->
+    <nav>
+        <div class="nav-header"><a href="index.html">Bensite</a></div>
+        <button class="hamburger" aria-label="Toggle navigation">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="index.html">About</a></li>
+            <li><a href="index.html#portfolio">Portfolio</a></li>
+            <li><a href="b_stretch.html">Stretch</a></li>
+            <li><a href="c_precedents.html">Precedents</a></li>
+            <li><a href="#footer">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Title area -->
+    <section class="prec-intro">
+        <h1>Precedents</h1>
+        <p>This is a tool which allows for the organization of projects for easy recall</p>
+    </section>
+
+    <!-- Matrix -->
+    <main id="view">
+        <div id="matrix"></div>
+    </main>
+
+    <!-- View switch -->
+    <div class="prec-views">
+        <button class="on" data-v="matrix">Matrix</button>
+        <button data-v="timeline">Timeline</button>
+        <button data-v="map">Map</button>
+    </div>
+
+   <!-- Add / edit project -->
+    <section id="editor" class="prec-editor">
+        <h2>Add / edit project</h2>
+ 
+        <label>Access token<input id="e_token" type="password" autocomplete="off"></label>
+ 
+        <label>Edit existing<select id="e_pick"></select></label>
+        <label>Title<input id="e_title"></label>
+        <label>Type
+            <select id="e_type">
+                <option value="">Choose a type</option>
+                <option>Building</option>
+                <option>Hypothetical</option>
+                <option>Writing</option>
+                <option>Drawing</option>
+                <option>Painting</option>
+                <option>Sculpture</option>
+            </select>
+        </label>
+        <div class="prec-row">
+            <label>Year<input id="e_year" type="number" min="1000" max="2100"></label>
+            <label>Designer<input id="e_designer" list="e_designers"></label>
+        </div>
+        <datalist id="e_designers"></datalist>
+        <label>Location (city, region, country)<input id="e_location"></label>
+        <label>URL<input id="e_url" type="url" placeholder="https://"></label>
+        <div class="prec-row">
+            <label>Image URL (optional)<input id="e_image" type="url" placeholder="https://"></label>
+            <label>Or upload an image<input id="e_file" type="file" accept="image/*"></label>
+        </div>
+        <div class="prec-actions">
+            <button type="button" id="e_save">Add project</button>
+            <button type="button" id="e_clear">Clear</button>
+            <button type="button" id="e_delete" hidden>Delete</button>
+        </div>
+        <p id="e_msg" role="status"></p>
+    </section>
+
+
+<!-- Contact Section -->
+<footer id="footer">
+    <div class="footer-container">
+        <h3>Contact</h3>
+        <ul class="footer-links">
+            <li><a href="#" id="email-link" onclick="copyEmail()">bfusco00@gmail.com</a></li>
+            <li><a href="https://www.linkedin.com/in/benfusco/">LinkedIn</a></li>
+            <li><a href="https://www.instagram.com/beryllium.nitride/">Instagram</a></li>
+            <li><a href="https://www.printables.com/@be3n2_1791763">Printables</a></li>
+        </ul>
+        <p>&copy; <span id="year"></span> Ben Fusco. All rights reserved.</p>
+    </div>
+</footer>
+
+<!-- JavaScript Links-->
+<script src="c_prec-data/projects.js"></script>
+<script src="c_precedents.js"></script>
+<script src="c_editor.js"></script>
+<script src="a_main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/leaflet.markercluster.js"></script>
+
+</body>
+</html>
