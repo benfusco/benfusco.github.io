@@ -69,7 +69,7 @@ const c_projects = [
     "lat": 48.8938,
     "lng": 2.3908,
     "url": "https://www.tschumi.com/projects/3",
-    "image": "https://www.google.com/imgres?q=parc%20de%20la%20villette%20%5D&imgurl=https%3A%2F%2Fwww.moma.org%2Fmedia%2FW1siZiIsIjUyNzY3MCJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA5MCAtcmVzaXplIDIwMDB4MjAwMFx1MDAzZSJdXQ.jpg%3Fsha%3D122746da62417de5&imgrefurl=https%3A%2F%2Fwww.moma.org%2Fcollection%2Fworks%2F625&docid=TKjgQJ5jOEcLzM&tbnid=60XzSitzBjQ0SM&w=2000&h=1356&hcb=2"
+    "image": "https://www.google.com/imgres?q=parc%20de%20la%20villette%20%5D&imgurl=https%3A%2F%2Fwww.moma.org%2Fmedia%2FW1siZiIsIjUyNzY3MCJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA5MCAtcmVzaXplIDIwMDB4MjAwMFx1MDAzZSJdXQ.jpg%3Fsha%3D122746da62417de5&imgrefurl=https%3A%2F%2Fwww.moma.org%2Fcollection%2Fworks%2F625&docid=TKjgQJ5jOEcLzM&tbnid=60XzSitzBjQ0SM&vet=12ahUKEwjZ08jJyZ6XAxXfDzQIHXDjAOUQnPAOegUIlAEQAA..i&w=2000&h=1356&hcb=2&ved=2ahUKEwjZ08jJyZ6XAxXfDzQIHXDjAOUQnPAOegUIlAEQAA"
   },
   {
     "id": "le-fresnoy-art-center-1997",
