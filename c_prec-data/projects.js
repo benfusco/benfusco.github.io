@@ -80,8 +80,8 @@ const c_projects = [
     "location": "Tourcoing, France",
     "lat": 50.7172,
     "lng": 3.159,
-    "url": "",
-    "image": ""
+    "url": "https://www.tschumi.com/projects/14",
+    "image": "https://www.tschumi.com/img/assets/1a63652b-5f46-47f9-b304-c90185df8823?width=700&fit=contain"
   },
   {
     "id": "international-terminal-waterloo-1998",
