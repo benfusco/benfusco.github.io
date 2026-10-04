@@ -196,8 +196,8 @@ const c_projects = [
     "location": "Chicago, IL, USA",
     "lat": 41.8348,
     "lng": -87.6262,
-    "url": "",
-    "image": ""
+    "url": "https://www.oma.com/projects/iit-mccormick-tribune-campus-center",
+    "image": "https://cdn.sanity.io/images/5azy6oei/production/f2f8f9c5bf18dd0f93a6c1e7177ff6e32da43f56-3008x2000.tif?w=700&fm=jpg&q=80"
   },
   {
     "id": "de-young-museum-2005",
