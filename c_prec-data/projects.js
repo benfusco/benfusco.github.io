@@ -506,8 +506,8 @@ const c_projects = [
     "location": "North Haven, NY, USA",
     "lat": 41.0043,
     "lng": -72.3047,
-    "url": "",
-    "image": ""
+    "url": "https://dsrny.com/project/slow-house",
+    "image": "https://cdn.sanity.io/images/q2tdbkqz/production/cb800502184b6c41dcdae4889c08b0d058886e4c-6208x6510.jpg?w=1500&fit=max"
   },
   {
     "id": "the-shed-2019",
