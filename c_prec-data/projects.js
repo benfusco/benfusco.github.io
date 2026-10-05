@@ -266,8 +266,8 @@ const c_projects = [
     "year": 1971,
     "designer": "David Pye",
     "location": "",
-    "url": "",
-    "image": ""
+    "url": "https://memoof.me/read/884/pdf",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0vLDssOaBbs7qgd1i2vAox-CBqm8PkgEnbgHYRuVhUA&s=10"
   },
   {
     "id": "witch-trials-memorial-2011",
