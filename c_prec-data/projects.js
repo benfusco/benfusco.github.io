@@ -518,8 +518,8 @@ const c_projects = [
     "location": "New York, NY, USA",
     "lat": 40.7537,
     "lng": -74.002,
-    "url": "",
-    "image": ""
+    "url": "https://dsrny.com/project/the-shed",
+    "image": "https://cdn.sanity.io/images/q2tdbkqz/production/7b437948ecbf90dbbd0d951bc86d0b888c9f28d7-5769x3900.png?w=2000&fit=max&q=90"
   },
   {
     "id": "the-broad-2015",
