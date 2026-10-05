@@ -128,8 +128,8 @@ const c_projects = [
     "location": "Dresden, Germany",
     "lat": 51.0529,
     "lng": 13.7355,
-    "url": "",
-    "image": ""
+    "url": "https://coop-himmelblau.at/projects/ufa-cinema-center/",
+    "image": "https://coop-himmelblau.at/site/assets/files/4797/chbl-ufa-cinema-center-dresden-germany-duccio-malagamba-02.1200x0.jpg?6241b49a"
   },
   {
     "id": "akron-art-museum-2007",
