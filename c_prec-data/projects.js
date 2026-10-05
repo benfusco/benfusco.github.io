@@ -140,8 +140,8 @@ const c_projects = [
     "location": "Akron, OH, USA",
     "lat": 41.0833,
     "lng": -81.5208,
-    "url": "",
-    "image": ""
+    "url": "https://coop-himmelblau.at/projects/akron-art-museum/",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIMt-OgL8fsFuIT9ghD8w8UdC9kmnXdDkuKrrAALgVFCyFLu0XmusZog&s=10"
   },
   {
     "id": "rooftop-remodeling-falkestrasse-1988",
