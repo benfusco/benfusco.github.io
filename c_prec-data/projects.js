@@ -152,8 +152,8 @@ const c_projects = [
     "location": "Vienna, Austria",
     "lat": 48.2089,
     "lng": 16.3799,
-    "url": "",
-    "image": ""
+    "url": "https://coop-himmelblau.at/projects/falkestrasse/",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfqjWsI0VmPDWuOp4V-IwFe7VkJJcMYDv1A_JJIQPzmA&s=10"
   },
   {
     "id": "everything-is-already-an-image-2017",
