@@ -220,8 +220,8 @@ const c_projects = [
     "location": "Barcelona, Spain",
     "lat": 41.4067,
     "lng": 2.1957,
-    "url": "",
-    "image": ""
+    "url": "https://divisare.com/projects/194744-cloud-9-enric-ruiz-geli-media-ict",
+    "image": "https://www.designboom.com/wp-content/uploads/2014/06/02Media-ICT_cloud9.jpg"
   },
   {
     "id": "amant-2021",
