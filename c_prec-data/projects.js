@@ -116,8 +116,8 @@ const c_projects = [
     "location": "Barcelona, Spain",
     "lat": 41.832,
     "lng": 2.217,
-    "url": "",
-    "image": ""
+    "url": "https://cpinos.com/en/porfolio/civic-center/",
+    "image": "https://arquitecturaviva.com/assets/uploads/obras/58169/av_imagen.webp?h=25536006"
   },
   {
     "id": "ufa-cinema-center-1998",
