@@ -776,5 +776,17 @@ const c_projects = [
     "lng": 11.8939,
     "url": "",
     "image": ""
+  },
+  {
+    "id": "royal-academy-of-arts-2019",
+    "title": "Royal Academy of Arts",
+    "type": "Sculpture",
+    "year": 2019,
+    "designer": "Giles Retsin",
+    "location": "London, UK",
+    "lat": 51.50745,
+    "lng": -0.12777,
+    "url": "https://www.retsin.org/Royal-Academy-of-Arts",
+    "image": "https://payload.cargocollective.com/1/14/468850/13806736/Gilles-Retsin-Royal-Academy-Drawing-1-Reflected-Ceiling-_670.jpg"
   }
 ];
