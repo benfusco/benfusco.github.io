@@ -482,8 +482,8 @@ const c_projects = [
     "location": "Culver City, CA, USA",
     "lat": 34.0211,
     "lng": -118.3965,
-    "url": "",
-    "image": ""
+    "url": "https://ericowenmoss.com/project-detail/vespertine/",
+    "image": "https://images.adsttc.com/media/images/5f84/763e/63c0/1777/3a00/00b2/large_jpg/Waffle__Culver_City__LA__(c)_EOMA_(2).jpg?1602516512"
   },
   {
     "id": "vagelos-education-center-2016",
