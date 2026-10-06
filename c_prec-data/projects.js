@@ -494,8 +494,8 @@ const c_projects = [
     "location": "New York, NY, USA",
     "lat": 40.8412,
     "lng": -73.9423,
-    "url": "",
-    "image": ""
+    "url": "https://dsrny.com/project/roy-and-diana-vagelos-education-center?index=false&section=projects&search=Vagelos%20Education%20Center&tags=education",
+    "image": "https://cdn.sanity.io/images/q2tdbkqz/production/8ddb512f6357880ce7fb0b28a02b89e003564cd3-4000x6000.jpg?w=1500&fit=max"
   },
   {
     "id": "slow-house-project-1989",
