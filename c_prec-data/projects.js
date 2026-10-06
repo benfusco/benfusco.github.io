@@ -542,8 +542,8 @@ const c_projects = [
     "location": "New York, NY, USA",
     "lat": 40.7725,
     "lng": -73.9835,
-    "url": "",
-    "image": ""
+    "url": "https://dsrny.com/project/lincoln-center-hypar?index=false&section=projects&search=lincoln",
+    "image": "https://cdn.sanity.io/images/q2tdbkqz/production/VB9MvueucrFggi4owEQ46nM1-2200x1439.jpg?w=1500&fit=max&q=90"
   },
   {
     "id": "market-hall-aarau",
