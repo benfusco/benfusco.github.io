@@ -104,8 +104,8 @@ const c_projects = [
     "location": "Barcelona, Spain",
     "lat": 41.3862,
     "lng": 2.179,
-    "url": "",
-    "image": ""
+    "url": "https://www.mirallestagliabue.com/project/santa-caterina-market-renovation/",
+    "image": "https://www.mirallestagliabue.com/wp-content/uploads/2018/01/SANTA-CATERINA-%C2%A9-ROLAND-HALBE.jpg"
   },
   {
     "id": "city-hall-and-social-center-of-hostalets-2005",
