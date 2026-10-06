@@ -530,8 +530,8 @@ const c_projects = [
     "location": "Los Angeles, CA, USA",
     "lat": 34.0544,
     "lng": -118.2506,
-    "url": "",
-    "image": ""
+    "url": "https://dsrny.com/project/the-broad?index=false&section=projects&search=the%20broad",
+    "image": "https://cdn.sanity.io/images/q2tdbkqz/production/Z4l4OSDiH7TpcuKS4TSzHKAk-6000x4000.jpg?w=2000&fit=max&q=90"
   },
   {
     "id": "lincoln-center-cafe",
