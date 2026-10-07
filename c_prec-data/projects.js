@@ -788,5 +788,15 @@ const c_projects = [
     "lng": -0.12777,
     "url": "https://www.retsin.org/Royal-Academy-of-Arts",
     "image": "https://payload.cargocollective.com/1/14/468850/13806736/Gilles-Retsin-Royal-Academy-Drawing-1-Reflected-Ceiling-_670.jpg"
+  },
+  {
+    "id": "the-turned-room-2023",
+    "title": "The Turned Room",
+    "type": "Drawing",
+    "year": 2023,
+    "designer": "Young & Ayata",
+    "location": "",
+    "url": "https://www.young-ayata.com/the-turned-room",
+    "image": "https://images.squarespace-cdn.com/content/v1/53d133fee4b088cc18049660/1701356306942-37GMGFKI339DWZZ425LO/Young%2B%26%2BAyata%2B-%2BThe%2BTurned%2BRoom%2B8.jpg?format=2500w"
   }
 ];
