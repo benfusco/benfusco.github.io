@@ -679,11 +679,13 @@ const c_projects = [
     "id": "archery-hall",
     "title": "Archery Hall",
     "type": "Building",
-    "year": null,
+    "year": 2013,
     "designer": "FT Architects",
-    "location": "",
-    "url": "",
-    "image": ""
+    "location": "Tokyo, Japan",
+    "lat": 35.67686,
+    "lng": 139.76389,
+    "url": "https://divisare.com/projects/337658-ft-architects-shigeo-ogawa-boxing-club",
+    "image": "https://images.divisare.com//images/f_auto,q_auto,w_800/v1487243915/fklqtww2lhnjtaqzodoy/ft-architects-shigeo-ogawa-boxing-club.jpg"
   },
   {
     "id": "boxing-club",
