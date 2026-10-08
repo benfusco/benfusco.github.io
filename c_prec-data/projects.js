@@ -691,11 +691,13 @@ const c_projects = [
     "id": "boxing-club",
     "title": "Boxing Club",
     "type": "Building",
-    "year": null,
+    "year": 2013,
     "designer": "FT Architects",
-    "location": "",
-    "url": "",
-    "image": ""
+    "location": "Tokyo, Japan",
+    "lat": 35.67686,
+    "lng": 139.76389,
+    "url": "https://divisare.com/projects/336478-ft-architects-shigeo-ogawa-archery-hall",
+    "image": "https://images.divisare.com//images/f_auto,q_auto,w_800/v1486036720/nxodoalsez4d19ioikfi/ft-architects-shigeo-ogawa-archery-hall.jpg"
   },
   {
     "id": "karsamaki-shingle-church-2004",
