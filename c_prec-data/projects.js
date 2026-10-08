@@ -602,7 +602,7 @@ const c_projects = [
     "location": "Mannheim, Germany",
     "lat": 49.509,
     "lng": 8.472,
-    "url": "",
+    "url": "https://mannheim-multihalle.de/en/architecture/",
     "image": ""
   },
   {
