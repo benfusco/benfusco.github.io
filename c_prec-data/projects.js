@@ -720,8 +720,8 @@ const c_projects = [
     "location": "Espoo, Finland",
     "lat": 60.185,
     "lng": 24.8235,
-    "url": "",
-    "image": ""
+    "url": "https://divisare.com/projects/329795-heikki-and-kaija-siren-federico-covre-otaniemi-chapel",
+    "image": "https://images.divisare.com//images/f_auto,q_auto,w_800/v1478339673/yhdbxyzhjnrjimb3ak1d/heikki-and-kaija-siren-federico-covre-otaniemi-chapel.jpg"
   },
   {
     "id": "gehry-house-1978",
