@@ -127,12 +127,14 @@
 
   // click empty space (not a card, the form, or the view buttons) to deselect; Escape works too.
   // Dragging the board to pan does not count as a click.
-  let downAt = null;
-  document.addEventListener('pointerdown', e => { downAt = { x: e.clientX, y: e.clientY }; });
+    // Click empty space inside the matrix / timeline / map box to deselect (Escape works too).
+  // Panning or pinching the board doesn't count as a click.
   document.addEventListener('click', e => {
     if (!editingId) return;
-    if (downAt && Math.hypot(e.clientX - downAt.x, e.clientY - downAt.y) > 4) return;
-    if (e.target.closest('.card, #editor, .prec-views, .leaflet-popup, .zoom')) return;
+    if (!e.target.closest('#matrix')) return;
+    if (e.target.closest('.card, .zoom, .leaflet-popup, .leaflet-control')) return;
+    const board = document.getElementById('board');
+    if (board && board.dataset.moved === '1') return;
     clearForm(); say('');
   });
   document.addEventListener('keydown', e => {

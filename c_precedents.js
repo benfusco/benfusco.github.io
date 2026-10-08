@@ -31,8 +31,9 @@ function makeCard(p) {
   card.appendChild(info);
   if (p.image) {
     const img = el('img');
+    img.referrerPolicy = 'no-referrer';   // many sites block images when they see a referrer
     img.src = p.image; img.alt = p.title; img.loading = 'lazy';
-    img.onerror = () => img.remove();
+    img.onerror = () => { console.warn('Image failed to load:', p.title, p.image); img.remove(); };
     card.appendChild(img);
   }
   return card;
@@ -88,136 +89,162 @@ function enablePanZoom(board, world) {
     }
   }, {passive: false});
 
+  const pts = new Map();   // fingers / pointers currently down, by id
+  let pinch = null;        // set while two fingers are down
+
+  const pinchState = () => {
+    const [a, b] = [...pts.values()];
+    return { cx: (a.x + b.x) / 2, cy: (a.y + b.y) / 2, dist: Math.hypot(a.x - b.x, a.y - b.y) || 1 };
+  };
+
   board.addEventListener('pointerdown', e => {
-    if (e.target.closest('.card, button')) return;
-    drag = {x: e.clientX - x, y: e.clientY - y};
-    board.setPointerCapture(e.pointerId);
-    board.classList.add('grab');
+    if (e.target.closest('button')) return;
+    pts.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    board.dataset.moved = '0';
+    if (pts.size === 2) {                         // second finger: start pinch
+      drag = null;
+      pinch = pinchState();
+      pts.forEach((_, id) => board.setPointerCapture(id));
+      board.classList.add('grab');
+    } else if (pts.size === 1 && !e.target.closest('.card')) {   // one finger on empty space: pan
+      drag = { x: e.clientX - x, y: e.clientY - y, sx: e.clientX, sy: e.clientY };
+      board.setPointerCapture(e.pointerId);
+      board.classList.add('grab');
+    }
   });
+
   board.addEventListener('pointermove', e => {
-    if (!drag) return;
-    x = e.clientX - drag.x; y = e.clientY - drag.y; apply();
+    if (!pts.has(e.pointerId)) return;
+    pts.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    if (pinch && pts.size === 2) {                // two fingers: zoom and pan together
+      const m = pinchState(), r = board.getBoundingClientRect();
+      x += m.cx - pinch.cx; y += m.cy - pinch.cy;
+      zoomAt(m.dist / pinch.dist, m.cx - r.left, m.cy - r.top);
+      pinch = m;
+      board.dataset.moved = '1';
+    } else if (drag) {                            // one finger / mouse: pan
+      x = e.clientX - drag.x; y = e.clientY - drag.y; apply();
+      if (Math.hypot(e.clientX - drag.sx, e.clientY - drag.sy) > 4) board.dataset.moved = '1';
+    }
   });
-  const stop = () => { drag = null; board.classList.remove('grab'); };
-  board.addEventListener('pointerup', stop);
-  board.addEventListener('pointercancel', stop);
+
+  const release = e => {
+    pts.delete(e.pointerId);
+    pinch = null;
+    if (pts.size === 1) {                         // one finger left after a pinch: keep panning
+      const [p] = pts.values();
+      drag = { x: p.x - x, y: p.y - y, sx: p.x, sy: p.y };
+    } else if (pts.size === 0) {
+      drag = null;
+      board.classList.remove('grab');
+    }
+  };
+  board.addEventListener('pointerup', release);
+  board.addEventListener('pointercancel', release);
 
   fit();
 }
 
 const TYPES = ['Building', 'Hypothetical', 'Writing', 'Drawing', 'Painting', 'Sculpture'];
-const MAX_PX_PER_YEAR = 320;   // timeline never spreads wider than this per year
-const LANE_GAP = 24;           // vertical space between rows of overlapping columns
-const NICE_STEPS = [1, 2, 5, 10, 25, 50, 100, 250, 500, 1000, 2500, 5000];
-const COL_W = 280;         // width of a year column
-const COL_TOP = 70;        // space above cards for the axis
+const PER_ROW = 10;        // designers per row in the matrix
+const COL_W = 280;            // width of a column of cards
+const COL_TOP = 70;           // space above cards for the axis
+const MAX_PER_COL = 6;        // cards per column; busier years get extra columns
+const COL_GAP = 16;           // space between extra columns of the same year
+const YEAR_GAP = 28;          // space between neighbouring years that have projects
+const SPAN_GAP = 6;           // extra space for each empty year in a short gap
+const SHORT_GAP_YEARS = 10;   // gaps longer than this are collapsed into decades
+const BREAK_BASE = 110;       // minimum space for a long empty stretch
+const BREAK_PER_DECADE = 8;   // extra space per empty decade in a long stretch
+const BREAK_MAX = 420;        // a long stretch never takes more than this
 
-// Matrix: designers across the top, project types down the side.
-// Rows follow TYPES order; types nobody uses are hidden; untyped projects go in "Unsorted".
+
+// Matrix: one section per project type, each section a wrapping grid of designers
+// (PER_ROW across). A designer appears in every section where they have projects.
+// Sections follow TYPES order; types nobody uses are hidden; untyped projects go in "Unsorted".
 function buildMatrix(projects, world) {
-  const designers = [...new Set(projects.map(p => p.designer || 'Unknown'))].sort((a, b) => a.localeCompare(b));
   const typeOf = p => TYPES.includes(p.type) ? p.type : 'Unsorted';
-  const rows = [...TYPES, 'Unsorted'].filter(t => projects.some(p => typeOf(p) === t));
+  const nameOf = p => p.designer || 'Unknown';
+  const sections = [...TYPES, 'Unsorted']
+    .map(type => ({ type, list: projects.filter(p => typeOf(p) === type) }))
+    .filter(s => s.list.length);
+  const widest = Math.max(...sections.map(s => new Set(s.list.map(nameOf)).size));
 
   world.classList.add('matrix');
-  world.style.setProperty('--cols', designers.length);
+  world.style.setProperty('--per-row', Math.min(PER_ROW, widest));
 
-  world.appendChild(el('div', 'corner'));
-  designers.forEach(d => world.appendChild(el('h2', 'colhead', d)));
-
-  rows.forEach(type => {
-    world.appendChild(el('div', 'rowlabel', type));
-    designers.forEach(d => {
-      const cell = el('div', 'cell'), stack = el('div', 'stack');
-      projects
-        .filter(p => (p.designer || 'Unknown') === d && typeOf(p) === type)
+  sections.forEach(({ type, list }) => {
+    const section = el('div', 'mtype'), grid = el('div', 'mgrid');
+    const groups = groupBy(list, nameOf);
+    Object.keys(groups).sort((a, b) => a.localeCompare(b)).forEach(name => {
+      const col = el('div', 'dcol'), stack = el('div', 'stack');
+      groups[name]
         .sort((a, b) => (a.year || 9999) - (b.year || 9999))
         .forEach(p => stack.appendChild(makeCard(p)));
-      cell.appendChild(stack);
-      world.appendChild(cell);
+      col.append(el('h3', 'colhead', name), stack);
+      grid.appendChild(col);
     });
+    section.append(el('h2', 'typehead', type), grid);
+    world.appendChild(section);
   });
 }
 
-// Timeline scaled to the dates available: the whole range is fitted to the width of the board,
-// whether that is a few years or thousands (never wider than MAX_PX_PER_YEAR per year). Columns that would overlap
-// are placed on separate rows ("lanes"), with a thin line back to their spot on the axis.
-// Must be called after `world` is in the page so heights can be measured.
-function buildTimeline(projects, world, viewWidth) {
+// Timeline: only years that have projects get space. Years with many projects get extra
+// columns; short gaps stay short; long empty stretches collapse into a small break scaled by decades.
+function buildTimeline(projects, world) {
   world.classList.add('timeline');
   const dated = projects.filter(p => Number.isFinite(p.year));
   const undated = projects.filter(p => !Number.isFinite(p.year));
   const groups = groupBy(dated, p => p.year);
   const years = Object.keys(groups).map(Number).sort((a, b) => a - b);
-  const min = years.length ? years[0] : 0;
-  const max = years.length ? years[years.length - 1] : 0;
-  const range = max - min;
-  // fit the whole date range to the width of the board (leaving room for the last column)
-  const avail = Math.max(500, viewWidth - COL_W * (undated.length ? 2 : 1) - 140);
-  const ppy = range ? Math.min(MAX_PX_PER_YEAR, avail / range) : MAX_PX_PER_YEAR;  // pixels per year
-  let width = years.length ? range * ppy + COL_W : 0;
 
   const axis = el('div', 'axis');
   world.appendChild(axis);
-  const addTick = (label, left, cls) => {
-    const t = el('div', 'tick' + (cls ? ' ' + cls : ''), label);
-    t.style.left = left + 'px';
-    world.appendChild(t);
+  let x = 0;
+
+  const place = (label, list) => {
+    list.sort((a, b) => (a.designer || '').localeCompare(b.designer || '') || a.title.localeCompare(b.title));
+    const tick = el('div', 'tick decade', label);
+    tick.style.left = x + 'px';
+    world.appendChild(tick);
+    const n = Math.ceil(list.length / MAX_PER_COL);
+    for (let i = 0; i < n; i++) {
+      const col = el('div', 'col'), stack = el('div', 'stack');
+      list.slice(i * MAX_PER_COL, (i + 1) * MAX_PER_COL).forEach(p => stack.appendChild(makeCard(p)));
+      col.appendChild(stack);
+      col.style.left = x + 'px';
+      world.appendChild(col);
+      x += COL_W + (i < n - 1 ? COL_GAP : 0);
+    }
   };
 
-  // axis ticks at "nice" intervals that stay readable at this scale
-  if (years.length) {
-    const step = NICE_STEPS.find(s => s * ppy >= 90) || NICE_STEPS[NICE_STEPS.length - 1];
-    for (let y = Math.ceil(min / step) * step; y <= max; y += step) {
-      addTick(fmtYear(y), (y - min) * ppy, y % (step * 5) === 0 ? 'decade' : '');
+  years.forEach((y, i) => {
+    if (i > 0) {
+      const d = y - years[i - 1];
+      const long = d > SHORT_GAP_YEARS;
+      const gap = long
+        ? Math.min(BREAK_MAX, BREAK_BASE + Math.floor(d / 10) * BREAK_PER_DECADE)
+        : YEAR_GAP + (d - 1) * SPAN_GAP;
+      if (long) {
+        const note = el('div', 'gaplabel', `${d.toLocaleString()} years`);
+        note.style.left = x + 'px';
+        note.style.width = gap + 'px';
+        world.appendChild(note);
+      }
+      x += gap;
     }
-  }
+    place(fmtYear(y), groups[y]);
+  });
 
-  const items = years.map(y => ({ left: (y - min) * ppy, list: groups[y], label: fmtYear(y) }));
   if (undated.length) {
-    const left = width ? width + 80 : 0;
-    addTick('Undated', left, 'decade');
-    items.push({ left, list: undated, label: 'Undated' });
-    width = left + COL_W;
+    if (years.length) x += 90;
+    place('Undated', undated);
   }
 
-  // assign each column to the first lane where it doesn't overlap
-  const laneEdge = [];
-  items.forEach(it => {
-    let lane = laneEdge.findIndex(edge => edge + 16 <= it.left);
-    if (lane === -1) lane = laneEdge.length;
-    laneEdge[lane] = it.left + COL_W;
-    it.lane = lane;
-
-    const col = el('div', 'col'), stack = el('div', 'stack');
-    it.list.sort((a, b) => (a.designer || '').localeCompare(b.designer || '') || a.title.localeCompare(b.title))
-      .forEach(p => stack.appendChild(makeCard(p)));
-    col.append(el('div', 'yearlabel', it.label), stack);
-    col.style.left = it.left + 'px';
-    world.appendChild(col);
-    it.col = col;
-  });
-
-  // measure, then stack the lanes one under another
-  const laneH = laneEdge.map(() => 0);
-  items.forEach(it => { laneH[it.lane] = Math.max(laneH[it.lane], it.col.offsetHeight); });
-  const laneTop = [];
-  let y = COL_TOP;
-  laneH.forEach((h, i) => { laneTop[i] = y; y += h + LANE_GAP; });
-
-  items.forEach(it => {
-    const top = laneTop[it.lane];
-    it.col.style.top = top + 'px';
-    const stem = el('div', 'stem');
-    stem.style.left = it.left + 'px';
-    stem.style.top = '36px';
-    stem.style.height = (top - 36) + 'px';
-    world.appendChild(stem);
-  });
-
-  axis.style.width = width + 'px';
-  world.style.width = width + 'px';
-  world.style.height = Math.max(COL_TOP, y - LANE_GAP) + 'px';
+  axis.style.width = x + 'px';
+  world.style.width = x + 'px';
+  const bottoms = [...world.querySelectorAll('.col')].map(c => c.offsetTop + c.offsetHeight);
+  world.style.height = Math.max(COL_TOP, ...bottoms) + 'px';
 }
 
 // Free key from https://carto.com/basemaps/apikey (emailed instantly, no account). Paste it between the quotes.
@@ -283,7 +310,7 @@ function renderBoard(projects, view) {
   board.appendChild(world);
   mount.appendChild(board);
 
-  if (view === 'timeline') buildTimeline(projects, world, board.clientWidth);
+  if (view === 'timeline') buildTimeline(projects, world);
   else buildMatrix(projects, world);
 
   enablePanZoom(board, world);
