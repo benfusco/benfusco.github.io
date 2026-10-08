@@ -422,8 +422,8 @@ const c_projects = [
     "location": "Los Angeles, CA, USA",
     "lat": 34.0553,
     "lng": -118.2498,
-    "url": "",
-    "image": ""
+    "url": "https://gehry.getty.edu/",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Image-Disney_Concert_Hall_by_Carol_Highsmith_edit.jpg/250px-Image-Disney_Concert_Hall_by_Carol_Highsmith_edit.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
   },
   {
     "id": "salk-institute-1966",
