@@ -728,8 +728,8 @@ const c_projects = [
     "location": "Santa Monica, CA, USA",
     "lat": 34.0236,
     "lng": -118.4851,
-    "url": "",
-    "image": ""
+    "url": "https://hicarquitectura.com/2025/12/frank-gehry-house-gehry/",
+    "image": "https://hicarquitectura.com/wp-content/uploads/2022/12/vaumm_7.jpg"
   },
   {
     "id": "helio-olga-house-1990",
