@@ -302,8 +302,8 @@ const c_projects = [
     "location": "Jiangsu, China",
     "lat": 31.3406,
     "lng": 119.8232,
-    "url": "",
-    "image": ""
+    "url": "https://kkaa.co.jp/en/project/ucca-clay-museum/",
+    "image": "https://kkaa.co.jp/img/2024/10/DJI_20240918174856_0630_D.jpg"
   },
   {
     "id": "centre-pompidou-metz-2010",
