@@ -208,8 +208,8 @@ const c_projects = [
     "location": "San Francisco, CA, USA",
     "lat": 37.7715,
     "lng": -122.4687,
-    "url": "",
-    "image": ""
+    "url": "https://www.herzogdemeuron.com/projects/173-de-young-museum/",
+    "image": "https://picturepark.cdn.herzogdemeuron.com/v/98As2gHw/"
   },
   {
     "id": "media-ict-2005",
