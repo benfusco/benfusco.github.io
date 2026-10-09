@@ -918,5 +918,17 @@ const c_projects = [
     "lng": -95.39847,
     "url": "https://www.rpbw.com/project/the-menil-collection",
     "image": ""
+  },
+  {
+    "id": "rothcko-chapel-1971",
+    "title": "Rothcko Chapel",
+    "type": "Building",
+    "year": 1971,
+    "designer": "Philip Johnson",
+    "location": "3900 Yupon St, Houston, TX 77006",
+    "lat": 29.73762,
+    "lng": -95.3962,
+    "url": "https://hicarquitectura.com/2025/02/philip-johnson-howard-barnstone-eugene-aubry-rothko-chapel/",
+    "image": ""
   }
 ];
