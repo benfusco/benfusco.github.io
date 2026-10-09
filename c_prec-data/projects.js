@@ -860,5 +860,15 @@ const c_projects = [
     "lng": -122.41305,
     "url": "https://aidlindarlingdesign.com/projects/355-11th-street/",
     "image": "https://aidlindarlingdesign.com/app/uploads/2022/07/355-01.jpg"
+  },
+  {
+    "id": "casablanca-finance-city-tower-2019",
+    "title": "Casablanca Finance City Tower",
+    "type": "Building",
+    "year": 2019,
+    "designer": "Morphosis",
+    "location": "CFC Tower, Casablanca 20250, Morocco",
+    "url": "https://www.morphosis.com/architecture/226/",
+    "image": "https://newmorphassets.s3.amazonaws.com/uploads/6722/CFC_IMG_8611_JP_EDIT.jpg"
   }
 ];
