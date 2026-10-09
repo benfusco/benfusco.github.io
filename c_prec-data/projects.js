@@ -398,8 +398,8 @@ const c_projects = [
     "location": "Paris, France",
     "lat": 48.8606,
     "lng": 2.3376,
-    "url": "",
-    "image": ""
+    "url": "https://prova.bellini.it/portfolio-articoli/department-of-islamic-arts-at-the-louvre-museum/",
+    "image": "https://prova.bellini.it/wp-content/uploads/2020/05/1.jpg"
   },
   {
     "id": "vitra-fire-station-1993",
