@@ -631,13 +631,13 @@ const c_projects = [
     "id": "timber-bridge-in-gulou",
     "title": "Timber Bridge in Gulou",
     "type": "Building",
-    "year": null,
+    "year": 2022,
     "designer": "LUO studio, Jin Weiqi",
     "location": "Jiangmen, China",
     "lat": 22.579,
     "lng": 113.082,
-    "url": "",
-    "image": ""
+    "url": "https://divisare.com/projects/456715-luo-studio-jin-weiqi-timber-bridge-in-gulou-waterfront",
+    "image": "https://images.divisare.com//images/f_auto,q_auto,w_800/v1646663120/cyjpubhylvug3vi0oi1l/luo-studio-jin-weiqi-timber-bridge-in-gulou-waterfront.jpg"
   },
   {
     "id": "viikki-church-2005",
