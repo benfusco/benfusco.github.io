@@ -848,5 +848,15 @@ const c_projects = [
     "lng": -70.94783,
     "url": "https://www.archdaily.com/63683/ad-classics-exeter-library-class-of-1945-library-louis-kahn",
     "image": ""
+  },
+  {
+    "id": "355-11th-st-2009",
+    "title": "355 11th St",
+    "type": "Building",
+    "year": 2009,
+    "designer": "Aidlin Darlin Design",
+    "location": "355 11th st San Fransico, California, USA",
+    "url": "https://aidlindarlingdesign.com/projects/355-11th-street/",
+    "image": "https://aidlindarlingdesign.com/app/uploads/2022/07/355-01.jpg"
   }
 ];
