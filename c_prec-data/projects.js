@@ -615,7 +615,7 @@ const c_projects = [
     "lat": 37.3932,
     "lng": -5.9916,
     "url": "",
-    "image": ""
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRD3OAct13EpD7oiqdzoLBA2PUDAcqfyvPUbFhKLTlyqoPYGm2w5Rii-zFc&s=10"
   },
   {
     "id": "asahi-kindergarten-phase-ii",
