@@ -751,13 +751,13 @@ const c_projects = [
     "id": "shade-pavilion",
     "title": "Shade Pavilion",
     "type": "Building",
-    "year": null,
+    "year": 2026,
     "designer": "Liz Gálvez",
     "location": "Los Angeles, CA, USA",
     "lat": 34.0522,
     "lng": -118.2437,
-    "url": "",
-    "image": ""
+    "url": "https://www.dezeen.com/2026/07/09/liz-galvez-shade-pavilion-los-angeles-earthen-comforts/",
+    "image": "https://static.dezeen.com/uploads/2026/07/earthen-comforts-airing-earth-los-angeles-liz-galvez_dezeen_2364_hero-2048x1152.jpg"
   },
   {
     "id": "arch-7010",
