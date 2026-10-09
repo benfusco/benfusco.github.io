@@ -855,7 +855,9 @@ const c_projects = [
     "type": "Building",
     "year": 2009,
     "designer": "Aidlin Darlin Design",
-    "location": "355 11th st San Fransico, California, USA",
+    "location": "355 11th St, San Francisco, CA 94103",
+    "lat": 37.77128,
+    "lng": -122.41305,
     "url": "https://aidlindarlingdesign.com/projects/355-11th-street/",
     "image": "https://aidlindarlingdesign.com/app/uploads/2022/07/355-01.jpg"
   }
