@@ -802,5 +802,17 @@ const c_projects = [
     "location": "",
     "url": "https://www.young-ayata.com/the-turned-room",
     "image": "https://images.squarespace-cdn.com/content/v1/53d133fee4b088cc18049660/1701356306942-37GMGFKI339DWZZ425LO/Young%2B%26%2BAyata%2B-%2BThe%2BTurned%2BRoom%2B8.jpg?format=2500w"
+  },
+  {
+    "id": "450-warren-2022",
+    "title": "450 Warren",
+    "type": "Building",
+    "year": 2022,
+    "designer": "",
+    "location": "450 Warren, Brooklyn, New York",
+    "lat": 40.68343,
+    "lng": -73.98685,
+    "url": "https://solidobjectives.com/work/450-warren/",
+    "image": "https://images.ctfassets.net/6v3ra0uy9tu9/4XwsjBE7TCDn2m0ahnWCnU/28e6de9bc314de52e77b7800891766a6/450_Warren_SO-IL_3815.jpg?w=1920&h=1282&q=80&fm=webp"
   }
 ];
