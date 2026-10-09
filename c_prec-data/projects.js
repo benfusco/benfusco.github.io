@@ -906,5 +906,17 @@ const c_projects = [
     "lng": -95.38975,
     "url": "https://www.stevenholl.com/project/kinder-museum-building/",
     "image": "https://www.stevenholl.com/wp-content/uploads/2020/01/08.jpg"
+  },
+  {
+    "id": "the-menil-collection-1987",
+    "title": "The Menil Collection",
+    "type": "Building",
+    "year": 1987,
+    "designer": "Renzo Piano",
+    "location": "1533 Sul Ross St, Houston, TX 77006",
+    "lat": 29.7373,
+    "lng": -95.39847,
+    "url": "https://www.rpbw.com/project/the-menil-collection",
+    "image": ""
   }
 ];
