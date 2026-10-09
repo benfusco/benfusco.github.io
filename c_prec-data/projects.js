@@ -232,7 +232,7 @@ const c_projects = [
     "location": "New York, NY, USA",
     "lat": 40.7108,
     "lng": -73.9405,
-    "url": "",
+    "url": "https://solidobjectives.com/work/amant/",
     "image": ""
   },
   {
