@@ -573,13 +573,13 @@ const c_projects = [
     "id": "kibi-kogen-n-square",
     "title": "Kibi Kogen N Square",
     "type": "Building",
-    "year": null,
+    "year": 2024,
     "designer": "Kengo Kuma",
     "location": "Kibichuo, Okayama, Japan",
     "lat": 34.8,
     "lng": 133.73,
-    "url": "",
-    "image": ""
+    "url": "https://kkaa.co.jp/project/kibi-kogen-n-square/",
+    "image": "https://kkaa.co.jp/img/2024/05/011.jpg"
   },
   {
     "id": "tamedia-new-office-building-2013",
