@@ -872,5 +872,15 @@ const c_projects = [
     "lng": -7.66064,
     "url": "https://www.morphosis.com/architecture/226/",
     "image": "https://newmorphassets.s3.amazonaws.com/uploads/6722/CFC_IMG_8611_JP_EDIT.jpg"
+  },
+  {
+    "id": "perot-museum-of-nature-and-science-2010",
+    "title": "Perot Museum of Nature and Science",
+    "type": "Building",
+    "year": 2010,
+    "designer": "Morphosis",
+    "location": "2201 N. Field Street, Dallas, Texas, United States of America 75201",
+    "url": "https://www.morphosis.com/architecture/125/",
+    "image": "https://newmorphassets.s3.amazonaws.com/uploads/5301/MNS_Perot_Museum_MA_2066_IB.jpg"
   }
 ];
