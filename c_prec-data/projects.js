@@ -836,5 +836,17 @@ const c_projects = [
     "lng": 30.51912,
     "url": "https://kkaa.co.jp/en/project/odunpazari-modern-museum/",
     "image": "https://kkaa.co.jp/img/2019/10/82e633e7c1b51930dcc7cb3efd9459bd.jpg"
+  },
+  {
+    "id": "exeter-library-1972",
+    "title": "Exeter Library",
+    "type": "Building",
+    "year": 1972,
+    "designer": "Louis Kahn",
+    "location": "Exeter, New Hampshire, United States",
+    "lat": 42.98148,
+    "lng": -70.94783,
+    "url": "https://www.archdaily.com/63683/ad-classics-exeter-library-class-of-1945-library-louis-kahn",
+    "image": ""
   }
 ];
