@@ -867,7 +867,9 @@ const c_projects = [
     "type": "Building",
     "year": 2019,
     "designer": "Morphosis",
-    "location": "CFC Tower, Casablanca 20250, Morocco",
+    "location": "33.563368336548436, -7.660680770576513",
+    "lat": 33.56335,
+    "lng": -7.66064,
     "url": "https://www.morphosis.com/architecture/226/",
     "image": "https://newmorphassets.s3.amazonaws.com/uploads/6722/CFC_IMG_8611_JP_EDIT.jpg"
   }
