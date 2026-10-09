@@ -814,5 +814,15 @@ const c_projects = [
     "lng": -73.98685,
     "url": "https://solidobjectives.com/work/450-warren/",
     "image": "https://images.ctfassets.net/6v3ra0uy9tu9/4XwsjBE7TCDn2m0ahnWCnU/28e6de9bc314de52e77b7800891766a6/450_Warren_SO-IL_3815.jpg?w=1920&h=1282&q=80&fm=webp"
+  },
+  {
+    "id": "sandwiches-2016",
+    "title": "Sandwiches",
+    "type": "Hypothetical",
+    "year": 2016,
+    "designer": "Jennifer Bonner",
+    "location": "",
+    "url": "https://jenniferbonner.com/06-Best-Sandwiches",
+    "image": "https://freight.cargo.site/w/750/i/5c85b8994d1fb4d3294e2170d910d0118de0e14d5d4f39121e7d0c061778e9e8/MALL_BestSandwiches_Render-2.jpg"
   }
 ];
