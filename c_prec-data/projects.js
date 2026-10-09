@@ -256,8 +256,8 @@ const c_projects = [
     "location": "New York, NY, USA",
     "lat": 40.744,
     "lng": -73.9578,
-    "url": "",
-    "image": ""
+    "url": "https://www.stevenholl.com/project/hunters-point-library/",
+    "image": "https://www.stevenholl.com/wp-content/uploads/2020/01/19_Southwest-Elevation-v2edit_1-2048x1114.jpg"
   },
   {
     "id": "the-nature-and-art-of-workmanship-1971",
