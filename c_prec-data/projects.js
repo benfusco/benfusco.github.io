@@ -894,5 +894,17 @@ const c_projects = [
     "lng": -122.41116,
     "url": "https://www.morphosis.com/architecture/12/",
     "image": "https://newmorphassets.s3.amazonaws.com/uploads/7999/SFB_Federal_Bldg_SF_MA_0810_IB_lo.jpg"
+  },
+  {
+    "id": "museum-of-fine-arts-houston-2020",
+    "title": "Museum of Fine Arts Houston",
+    "type": "Building",
+    "year": 2020,
+    "designer": "Steven Holl",
+    "location": "5500 Main St, Houston, TX 77004",
+    "lat": 29.72655,
+    "lng": -95.38975,
+    "url": "https://www.stevenholl.com/project/kinder-museum-building/",
+    "image": "https://www.stevenholl.com/wp-content/uploads/2020/01/08.jpg"
   }
 ];
