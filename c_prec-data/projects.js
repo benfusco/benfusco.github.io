@@ -238,14 +238,14 @@ const c_projects = [
   {
     "id": "breath",
     "title": "Breath",
-    "type": "",
-    "year": null,
+    "type": "Building",
+    "year": 2017,
     "designer": "So-IL",
     "location": "Milan, Italy",
     "lat": 45.4642,
     "lng": 9.19,
-    "url": "",
-    "image": ""
+    "url": "https://solidobjectives.com/work/breathe/",
+    "image": "https://images.ctfassets.net/6v3ra0uy9tu9/1wpAMASyKhjXeicC5VxvgH/301251f0eaa08a54e95c3f24ae9b18d8/copyright_laurianghinitoiu_miniliving_SO-IL__6_of_15_.jpg?w=1920&h=1280&q=100&fm=webp"
   },
   {
     "id": "hunters-point-library-2019",
