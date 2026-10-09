@@ -338,8 +338,8 @@ const c_projects = [
     "location": "Atlanta, GA, USA",
     "lat": 33.749,
     "lng": -84.388,
-    "url": "",
-    "image": ""
+    "url": "https://jenniferbonner.com/01-Haus-Gables",
+    "image": "https://freight.cargo.site/w/750/i/e2f5a53fcec6fef14704774cd8e8eaea3fd5dd67eae2ea66b879d4bea901f5bd/HausGables_MALL_NAARO_21.jpg"
   },
   {
     "id": "plasencia-auditorium-and-congress-center-2017",
