@@ -824,5 +824,17 @@ const c_projects = [
     "location": "",
     "url": "https://jenniferbonner.com/06-Best-Sandwiches",
     "image": "https://freight.cargo.site/w/750/i/5c85b8994d1fb4d3294e2170d910d0118de0e14d5d4f39121e7d0c061778e9e8/MALL_BestSandwiches_Render-2.jpg"
+  },
+  {
+    "id": "odunpazar-modern-museum-2019",
+    "title": "Odunpazarı Modern Museum",
+    "type": "Building",
+    "year": 2019,
+    "designer": "Kengo Kuma",
+    "location": "Eskisehir, Turkey",
+    "lat": 39.77439,
+    "lng": 30.51912,
+    "url": "https://kkaa.co.jp/en/project/odunpazari-modern-museum/",
+    "image": "https://kkaa.co.jp/img/2019/10/82e633e7c1b51930dcc7cb3efd9459bd.jpg"
   }
 ];
