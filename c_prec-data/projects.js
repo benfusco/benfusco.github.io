@@ -648,8 +648,8 @@ const c_projects = [
     "location": "Helsinki, Finland",
     "lat": 60.2268,
     "lng": 25.019,
-    "url": "",
-    "image": ""
+    "url": "https://jkmm.fi/work/viikki-church/",
+    "image": "https://jkmm.fi/wp-content/uploads/2020/04/jkmm-architects-interior-viikki-church-kimmo-rasanen-2-1920x979.jpg"
   },
   {
     "id": "husaro",
