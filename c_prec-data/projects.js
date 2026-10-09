@@ -778,8 +778,8 @@ const c_projects = [
     "location": "San Martino in Badia, Italy",
     "lat": 46.7019,
     "lng": 11.8939,
-    "url": "",
-    "image": ""
+    "url": "https://www.smach.it/past-biennales/camera-obscura",
+    "image": "https://static.dezeen.com/uploads/2015/07/Camera-Obscura-by-Mariano-Dallago_dezeen_sq.jpg"
   },
   {
     "id": "royal-academy-of-arts-2019",
