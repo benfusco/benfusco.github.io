@@ -357,13 +357,13 @@ const c_projects = [
     "id": "harbin-opera-house",
     "title": "Harbin Opera House",
     "type": "Building",
-    "year": null,
+    "year": 2015,
     "designer": "MAD",
     "location": "Harbin, China",
     "lat": 45.805,
     "lng": 126.57,
-    "url": "",
-    "image": ""
+    "url": "https://www.i-mad.com/projects/harbin-opera-house",
+    "image": "https://www.i-mad.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2d8zs6ec%2Fproduction%2F62f29d95ecfa803160bab3816315aa4c89c9c939-8688x5792.jpg%3Fw%3D2000&w=1920&q=75"
   },
   {
     "id": "shenzhen-bay-culture-park-2026",
