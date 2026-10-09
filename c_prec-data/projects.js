@@ -470,8 +470,8 @@ const c_projects = [
     "location": "Pomona, CA, USA",
     "lat": 34.0017,
     "lng": -117.7942,
-    "url": "",
-    "image": ""
+    "url": "https://www.morphosis.com/architecture/14/",
+    "image": "https://newmorphassets.s3.amazonaws.com/uploads/483/DRH-10-XX-KZ-08-DRH-07PHBLD-l.jpg"
   },
   {
     "id": "waffle-2016",
