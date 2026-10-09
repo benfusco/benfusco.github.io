@@ -458,8 +458,8 @@ const c_projects = [
     "location": "New York, NY, USA",
     "lat": 40.7289,
     "lng": -73.9907,
-    "url": "",
-    "image": ""
+    "url": "https://www.morphosis.com/architecture/4/",
+    "image": "https://newmorphassets.s3.amazonaws.com/uploads/2418/03-Cooper-Union-2-1684-l.jpg"
   },
   {
     "id": "diamond-ranch-high-school-1999",
