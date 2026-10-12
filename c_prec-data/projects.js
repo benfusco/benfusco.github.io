@@ -947,7 +947,9 @@ const c_projects = [
     "type": "Building",
     "year": 2023,
     "designer": "Could Be Architecture",
-    "location": "Garfeild Park, Chicago, Illinois, USA",
+    "location": "Garfield Park, Chicago, Illinois, USA",
+    "lat": 41.88133,
+    "lng": -87.71835,
     "url": "https://couldbe.design/work/the-neighborhood-toolshed",
     "image": "https://couldbe.design/user/pages/02.work/53.the-neighborhood-toolshed/0151%2011_1600.jpeg"
   }
