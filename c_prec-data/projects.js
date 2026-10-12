@@ -930,5 +930,15 @@ const c_projects = [
     "lng": -95.3962,
     "url": "https://hicarquitectura.com/2025/02/philip-johnson-howard-barnstone-eugene-aubry-rothko-chapel/",
     "image": ""
+  },
+  {
+    "id": "diamonds-2016",
+    "title": "Diamonds",
+    "type": "Building",
+    "year": 2016,
+    "designer": "Giles Retsin",
+    "location": "",
+    "url": "https://www.retsin.org/Diamonds",
+    "image": "https://payload.cargocollective.com/1/14/468850/11113970/Retsin_Diamonds_house-4_670.jpg"
   }
 ];
