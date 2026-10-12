@@ -940,5 +940,15 @@ const c_projects = [
     "location": "",
     "url": "https://www.retsin.org/Diamonds",
     "image": "https://payload.cargocollective.com/1/14/468850/11113970/Retsin_Diamonds_house-4_670.jpg"
+  },
+  {
+    "id": "the-neighborhood-toolshed-2023",
+    "title": "The Neighborhood Toolshed",
+    "type": "Building",
+    "year": 2023,
+    "designer": "Could Be Architecture",
+    "location": "Garfeild Park, Chicago, Illinois, USA",
+    "url": "https://couldbe.design/work/the-neighborhood-toolshed",
+    "image": "https://couldbe.design/user/pages/02.work/53.the-neighborhood-toolshed/0151%2011_1600.jpeg"
   }
 ];
