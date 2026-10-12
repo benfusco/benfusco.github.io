@@ -952,5 +952,15 @@ const c_projects = [
     "lng": -87.71835,
     "url": "https://couldbe.design/work/the-neighborhood-toolshed",
     "image": "https://couldbe.design/user/pages/02.work/53.the-neighborhood-toolshed/0151%2011_1600.jpeg"
+  },
+  {
+    "id": "house-of-cards-1952",
+    "title": "House of Cards",
+    "type": "Sculpture",
+    "year": 1952,
+    "designer": "Charels & Ray Eames",
+    "location": "",
+    "url": "",
+    "image": "https://eames-media.s3.amazonaws.com/574/House-of-cards-main.png"
   }
 ];
