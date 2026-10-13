@@ -962,5 +962,15 @@ const c_projects = [
     "location": "",
     "url": "",
     "image": "https://eames-media.s3.amazonaws.com/574/House-of-cards-main.png"
+  },
+  {
+    "id": "deterritorialized-milieus-2009",
+    "title": "Deterritorialized milieus",
+    "type": "Hypothetical",
+    "year": 2009,
+    "designer": "Phillippe Rham",
+    "location": "",
+    "url": "http://www.philipperahm.com/data/projects/deterritorializedmilieus/index.html",
+    "image": ""
   }
 ];
