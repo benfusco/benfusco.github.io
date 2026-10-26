@@ -972,5 +972,15 @@ const c_projects = [
     "location": "",
     "url": "http://www.philipperahm.com/data/projects/deterritorializedmilieus/index.html",
     "image": ""
+  },
+  {
+    "id": "american-framing-2023",
+    "title": "American Framing",
+    "type": "Writing",
+    "year": 2023,
+    "designer": "Paul Andersen",
+    "location": "",
+    "url": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkggoVTQKsZOCPOWz_LkCTg_O3eY6jVmlWRFJhLcaXUgIqN7-25QHOXWS2&s=10"
   }
 ];
