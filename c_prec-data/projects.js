@@ -290,8 +290,8 @@ const c_projects = [
     "location": "Hannover, Germany",
     "lat": 52.3225,
     "lng": 9.81,
-    "url": "",
-    "image": ""
+    "url": "https://zumthor.bjorkan.no/project/steilneset/",
+    "image": "https://zumthor.bjorkan.no/images_800px/steilneset-duken.jpg"
   },
   {
     "id": "ucca-clay-museum-2024",
