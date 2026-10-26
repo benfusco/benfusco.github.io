@@ -1006,5 +1006,17 @@ const c_projects = [
     "lng": -97.37054,
     "url": "https://herbgreene.org/portfolio-item/prairie-house/",
     "image": "https://herbgreene.org/wp-content/uploads/2019/03/1.Herb-Greene-Prairie-House-1961-photo-Robert-Alan-Bowlby.jpg"
+  },
+  {
+    "id": "joyce-residence-1960",
+    "title": "Joyce Residence",
+    "type": "Building",
+    "year": 1960,
+    "designer": "Herb Greene",
+    "location": "Oklahoma 73559",
+    "lat": 34.68926,
+    "lng": -98.95052,
+    "url": "https://herbgreene.org/portfolio-item/joyce-residence/",
+    "image": "https://herbgreene.org/wp-content/uploads/2019/03/2.Joyce-Residence-Herb-Greene-Photo-Julius-Shulman.jpg"
   }
 ];
