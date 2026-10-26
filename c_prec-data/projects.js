@@ -1040,5 +1040,17 @@ const c_projects = [
     "lng": -78.51481,
     "url": "https://www.shim-sutcliffe.com/projects/house-on-horse-lake/",
     "image": "https://www.shim-sutcliffe.com/wp-content/uploads/2021/03/project-02_03.jpg"
+  },
+  {
+    "id": "moorlands-camp-dinning-hall-2000",
+    "title": "Moorlands Camp Dinning Hall",
+    "type": "Building",
+    "year": 2000,
+    "designer": "Shim-Sutcliffe",
+    "location": "Lake Kawagama, Ontario, Canada",
+    "lat": 45.30412,
+    "lng": -78.77405,
+    "url": "https://www.shim-sutcliffe.com/projects/moorelands-camp-dining-hall/",
+    "image": "https://www.shim-sutcliffe.com/wp-content/uploads/2021/03/9_Image-01.jpg"
   }
 ];
