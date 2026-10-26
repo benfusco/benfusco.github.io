@@ -20,8 +20,8 @@ const c_projects = [
     "location": "Noumea / New Caledonia",
     "lat": -22.2557,
     "lng": 166.4878,
-    "url": "",
-    "image": ""
+    "url": "https://www.rpbw.com/project/jean-marie-tjibaou-cultural-center",
+    "image": "https://cdn.sanity.io/images/zi3g9jaq/production/5f00334532f68976dd7698c68176eddc29af4f63-1400x2115.jpg"
   },
   {
     "id": "cern-science-gateway-building-2003",
