@@ -278,8 +278,8 @@ const c_projects = [
     "location": "Vardø, Norway",
     "lat": 70.3706,
     "lng": 31.1095,
-    "url": "",
-    "image": ""
+    "url": "https://zumthor.bjorkan.no/project/steilneset/",
+    "image": "https://zumthor.bjorkan.no/images_800px/steilneset-duken.jpg"
   },
   {
     "id": "swiss-sound-pavilion-2000",
