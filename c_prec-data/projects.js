@@ -1018,5 +1018,15 @@ const c_projects = [
     "lng": -98.95052,
     "url": "https://herbgreene.org/portfolio-item/joyce-residence/",
     "image": "https://herbgreene.org/wp-content/uploads/2019/03/2.Joyce-Residence-Herb-Greene-Photo-Julius-Shulman.jpg"
+  },
+  {
+    "id": "sunnyhills-2013",
+    "title": "Sunnyhills",
+    "type": "Building",
+    "year": 2013,
+    "designer": "Kengo Kuma",
+    "location": "3-chōme-10-20 Minamiaoyama, Minato City, Tokyo 107-0062, Japan",
+    "url": "https://kkaa.co.jp/project/sunnyhills-at-minami-aoyama/",
+    "image": "https://kkaa.co.jp/img/2013/08/sunnyhills4-DAICI-ANO.jpg"
   }
 ];
