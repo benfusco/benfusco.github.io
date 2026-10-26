@@ -410,8 +410,8 @@ const c_projects = [
     "location": "Weil am Rhein, Germany",
     "lat": 47.5973,
     "lng": 7.6165,
-    "url": "",
-    "image": ""
+    "url": "https://www.zha.com/projects/architecture/vitra-fire-station",
+    "image": "https://media-prod.zha.com/zhweb-prod-media/media/gf2ja2s5/00901_cp_cr_1993_n78352.jpg?w=3840&g=0.4047885356479189x0.68632852582075&fm=webp"
   },
   {
     "id": "walt-disney-concert-hall-2003",
