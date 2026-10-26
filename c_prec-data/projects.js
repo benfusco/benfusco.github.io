@@ -808,7 +808,7 @@ const c_projects = [
     "title": "450 Warren",
     "type": "Building",
     "year": 2022,
-    "designer": "",
+    "designer": "So-IL",
     "location": "450 Warren, Brooklyn, New York",
     "lat": 40.68343,
     "lng": -73.98685,
