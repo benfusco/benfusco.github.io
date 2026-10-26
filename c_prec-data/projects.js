@@ -1001,7 +1001,9 @@ const c_projects = [
     "type": "Building",
     "year": 1960,
     "designer": "Herb Greene",
-    "location": "Norman, Oaklahoma",
+    "location": "510 48th Ave NE, Norman, OK 73026",
+    "lat": 35.22482,
+    "lng": -97.37054,
     "url": "https://herbgreene.org/portfolio-item/prairie-house/",
     "image": "https://herbgreene.org/wp-content/uploads/2019/03/1.Herb-Greene-Prairie-House-1961-photo-Robert-Alan-Bowlby.jpg"
   }
