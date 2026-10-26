@@ -435,7 +435,7 @@ const c_projects = [
     "lat": 32.8875,
     "lng": -117.243,
     "url": "",
-    "image": ""
+    "image": "https://images.adsttc.com/media/images/5037/df85/28ba/0d59/9b00/0124/large_jpg/stringio.jpg?1414230565"
   },
   {
     "id": "unicorn-farm-1905",
