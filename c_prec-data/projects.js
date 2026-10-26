@@ -672,8 +672,8 @@ const c_projects = [
     "location": "Grenoble, France",
     "lat": 45.1885,
     "lng": 5.7245,
-    "url": "",
-    "image": ""
+    "url": "https://www.architecturelab.net/school-complex-pasteur-r2k-architects-2/",
+    "image": "https://images.adsttc.com/media/images/5130/e99e/b3fc/4b61/fb00/00a1/large_jpg/1065-01_02_sc_v2com.jpg?1362160025"
   },
   {
     "id": "archery-hall",
