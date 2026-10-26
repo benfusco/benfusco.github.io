@@ -982,5 +982,17 @@ const c_projects = [
     "location": "",
     "url": "",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkggoVTQKsZOCPOWz_LkCTg_O3eY6jVmlWRFJhLcaXUgIqN7-25QHOXWS2&s=10"
+  },
+  {
+    "id": "open-source-furniture-1974",
+    "title": "Open Source Furniture",
+    "type": "Sculpture",
+    "year": 1974,
+    "designer": "Enzo Mari",
+    "location": "Italy",
+    "lat": 42.63843,
+    "lng": 12.6743,
+    "url": "https://socks-studio.com/2016/04/18/critical-understanding-through-practice-autoprogettazione-by-enzo-mari-1974/",
+    "image": "https://socks-studio.com/img/blog/mari-autoprogettazione-2b-800x420.jpg"
   }
 ];
