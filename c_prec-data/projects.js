@@ -994,5 +994,15 @@ const c_projects = [
     "lng": 12.6743,
     "url": "https://socks-studio.com/2016/04/18/critical-understanding-through-practice-autoprogettazione-by-enzo-mari-1974/",
     "image": "https://socks-studio.com/img/blog/mari-autoprogettazione-2b-800x420.jpg"
+  },
+  {
+    "id": "the-prarie-house-1960",
+    "title": "The Prarie House",
+    "type": "Building",
+    "year": 1960,
+    "designer": "Herb Greene",
+    "location": "Norman, Oaklahoma",
+    "url": "https://herbgreene.org/portfolio-item/prairie-house/",
+    "image": "https://herbgreene.org/wp-content/uploads/2019/03/1.Herb-Greene-Prairie-House-1961-photo-Robert-Alan-Bowlby.jpg"
   }
 ];
