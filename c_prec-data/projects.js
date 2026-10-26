@@ -92,8 +92,8 @@ const c_projects = [
     "location": "London, UK",
     "lat": 51.5031,
     "lng": -0.1132,
-    "url": "",
-    "image": ""
+    "url": "https://grimshaw.global/projects/rail-and-mass-transit/international-terminal-waterloo/",
+    "image": "https://grimshaw.global/assets/crops/Crop.1693e4c2.93001_n509_banrimgland_1.jpg"
   },
   {
     "id": "santa-caterina-market-2005",
