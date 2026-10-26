@@ -1028,5 +1028,17 @@ const c_projects = [
     "location": "3-chōme-10-20 Minamiaoyama, Minato City, Tokyo 107-0062, Japan",
     "url": "https://kkaa.co.jp/project/sunnyhills-at-minami-aoyama/",
     "image": "https://kkaa.co.jp/img/2013/08/sunnyhills4-DAICI-ANO.jpg"
+  },
+  {
+    "id": "house-on-horse-lake-1990",
+    "title": "House on Horse Lake",
+    "type": "Building",
+    "year": 1990,
+    "designer": "Shim-Sutcliffe",
+    "location": "Haliburton, Ontario, Canada",
+    "lat": 45.15254,
+    "lng": -78.51481,
+    "url": "https://www.shim-sutcliffe.com/projects/house-on-horse-lake/",
+    "image": "https://www.shim-sutcliffe.com/wp-content/uploads/2021/03/project-02_03.jpg"
   }
 ];
