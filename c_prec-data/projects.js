@@ -1052,5 +1052,15 @@ const c_projects = [
     "lng": -78.77405,
     "url": "https://www.shim-sutcliffe.com/projects/moorelands-camp-dining-hall/",
     "image": "https://www.shim-sutcliffe.com/wp-content/uploads/2021/03/9_Image-01.jpg"
+  },
+  {
+    "id": "surreal-architectures-2012",
+    "title": "Surreal Architectures",
+    "type": "Drawing",
+    "year": 2012,
+    "designer": "Philip Dujarden",
+    "location": "",
+    "url": "",
+    "image": "https://cdn.thecoolist.com/wp-content/uploads/2012/03/Architectural-unreality-in-the-photographs-of-Philip-Dujardin-2.jpg"
   }
 ];
