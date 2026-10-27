@@ -1062,5 +1062,15 @@ const c_projects = [
     "location": "",
     "url": "",
     "image": "https://cdn.thecoolist.com/wp-content/uploads/2012/03/Architectural-unreality-in-the-photographs-of-Philip-Dujardin-2.jpg"
+  },
+  {
+    "id": "semiramis-2022",
+    "title": "Semiramis",
+    "type": "Sculpture",
+    "year": 2022,
+    "designer": "Gramazio Kohler Research",
+    "location": "",
+    "url": "https://gramaziokohler.arch.ethz.ch/web/d/projekte/409.html",
+    "image": "https://gramaziokohler.arch.ethz.ch/data/ProjectImages/02_Web/M/302/302_Semiramis_GramazioKohlerResearch03_WM.jpg"
   }
 ];
