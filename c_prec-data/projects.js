@@ -1072,5 +1072,17 @@ const c_projects = [
     "location": "",
     "url": "https://gramaziokohler.arch.ethz.ch/web/d/projekte/409.html",
     "image": "https://gramaziokohler.arch.ethz.ch/data/ProjectImages/02_Web/M/302/302_Semiramis_GramazioKohlerResearch03_WM.jpg"
+  },
+  {
+    "id": "glasgo-school-of-art-2020",
+    "title": "Glasgo School of Art",
+    "type": "Building",
+    "year": 2020,
+    "designer": "Barry Wark",
+    "location": "167 Renfrew St, Glasgow G3 6RQ, United Kingdom",
+    "lat": 55.86605,
+    "lng": -4.26375,
+    "url": "",
+    "image": "https://d37vpt3xizf75m.cloudfront.net/api/file/TLyMQ4Q5WTXbZOgadzAJ/convert?h=1000&compress=true&fit=max"
   }
 ];
