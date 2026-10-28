@@ -1096,5 +1096,17 @@ const c_projects = [
     "lng": -83.09878,
     "url": "https://www.marlonblackwell.com/projects/moore-honeyhouse",
     "image": "https://www.marlonblackwell.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F88s7wwtc%2Fproduction%2F15f19fef824758e5311c99a79a59eefdfcff922d-2560x2048.jpg%3Fw%3D2000&w=3840&q=75"
+  },
+  {
+    "id": "thaden-school-bike-barn-2020",
+    "title": "Thaden School Bike Barn",
+    "type": "Building",
+    "year": 2020,
+    "designer": "Marlon Blackwell",
+    "location": "Bentonville, Arkansas, USA",
+    "lat": 36.37286,
+    "lng": -94.20879,
+    "url": "https://www.marlonblackwell.com/projects/thaden-school-bike-barn",
+    "image": "https://www.marlonblackwell.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F88s7wwtc%2Fproduction%2F097d7aba9a6ded7f4fa58fb85b36c7e70a33681e-2048x1200.jpg%3Fw%3D2000&w=2048&q=75"
   }
 ];
