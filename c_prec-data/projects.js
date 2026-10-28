@@ -1084,5 +1084,17 @@ const c_projects = [
     "lng": -4.26375,
     "url": "",
     "image": "https://d37vpt3xizf75m.cloudfront.net/api/file/TLyMQ4Q5WTXbZOgadzAJ/convert?h=1000&compress=true&fit=max"
+  },
+  {
+    "id": "moore-honeyhouse-1998",
+    "title": "Moore Honeyhouse",
+    "type": "Building",
+    "year": 1998,
+    "designer": "Marlon Blackwell",
+    "location": "Cashiers, North Carolina, USA",
+    "lat": 35.11225,
+    "lng": -83.09878,
+    "url": "https://www.marlonblackwell.com/projects/moore-honeyhouse",
+    "image": "https://www.marlonblackwell.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F88s7wwtc%2Fproduction%2F15f19fef824758e5311c99a79a59eefdfcff922d-2560x2048.jpg%3Fw%3D2000&w=3840&q=75"
   }
 ];
