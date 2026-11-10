@@ -1108,5 +1108,15 @@ const c_projects = [
     "lng": -94.20879,
     "url": "https://www.marlonblackwell.com/projects/thaden-school-bike-barn",
     "image": "https://www.marlonblackwell.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F88s7wwtc%2Fproduction%2F097d7aba9a6ded7f4fa58fb85b36c7e70a33681e-2048x1200.jpg%3Fw%3D2000&w=2048&q=75"
+  },
+  {
+    "id": "the-grapevine-structure-1970",
+    "title": "The Grapevine Structure",
+    "type": "Hypothetical",
+    "year": 1970,
+    "designer": "Konrad Wachsmann",
+    "location": "",
+    "url": "https://en.wikipedia.org/wiki/Konrad_Wachsmann",
+    "image": "https://parasitevisions.wordpress.com/wp-content/uploads/2010/09/konrad-wachsmann2.jpg"
   }
 ];
