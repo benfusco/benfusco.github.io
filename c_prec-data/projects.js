@@ -566,8 +566,8 @@ const c_projects = [
     "location": "Stockholm, Sweden",
     "lat": 59.335,
     "lng": 18.078,
-    "url": "",
-    "image": ""
+    "url": "https://divisare.com/projects/341638-tengbom-felix-gerlach-the-temporary-market-hall",
+    "image": "https://images.divisare.com//images/f_auto,q_auto,w_800/v1491391414/fpudqgfwkcj8dwznbelh/tengbom-felix-gerlach-the-temporary-market-hall.jpg"
   },
   {
     "id": "kibi-kogen-n-square",
